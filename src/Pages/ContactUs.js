@@ -1,8 +1,11 @@
-import { Box } from "@mui/material";
 import React from "react";
-import img1 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/kalyaniSareepic.jpg";
-import img2 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/OrangeSareeWomen.png";
-import img3 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/RedSareeWomen.png";
+
+import { Box } from "@mui/material";
+
+import img1 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/kalyaniSareepic.jpg";
+import img2 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/OrangeSareeWomen.png";
+import img3 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/RedSareeWomen.png";
+
 import PlaceIcon from '@mui/icons-material/Place';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
