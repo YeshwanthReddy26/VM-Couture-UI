@@ -4,7 +4,7 @@ const Home = () => {
     return (
         <>
         <h1>
-            Welcome to VM-COUTURE
+            Welcome to VM-COUTURE - by yeshwanth reddy
         </h1>
         </>
 
