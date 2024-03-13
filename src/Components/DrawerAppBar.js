@@ -29,9 +29,9 @@ const navItems = [
         path: "",
     },
     {
-        text: "About",
+        text: "About Us",
         icon: <InfoIcon />,
-        path: "about",
+        path: "about-us",
     },
     {
         text: "Contact Us",
