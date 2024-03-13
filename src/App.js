@@ -1,15 +1,19 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './Pages/Home';
+import DrawerAppBar from './Components/DrawerAppBar';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-        </Routes>
-      </Router>
+      <DrawerAppBar />
+      <div style={{ paddingTop: "56px" }}>
+        <Router >
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+          </Routes>
+        </Router>
+      </div>
     </div>
   );
 }
