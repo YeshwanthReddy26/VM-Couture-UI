@@ -15,9 +15,30 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+import { ListItemIcon } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact us"];
+const navItems = [
+    {
+        text: "Home",
+        icon: <HomeIcon />,
+        path: "",
+    },
+    {
+        text: "About",
+        icon: <InfoIcon />,
+        path: "about",
+    },
+    {
+        text: "Contact Us",
+        icon: <ContactPhoneIcon />,
+        path: "contact-us",
+    },
+];
 
 function DrawerAppBar(props) {
     const { window } = props;
@@ -25,9 +46,15 @@ function DrawerAppBar(props) {
     const theme = useTheme();
     const isExtraSmall = !useMediaQuery(theme.breakpoints.up('sm'));
 
+    const navigate = useNavigate();
+
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
+
+    const handleNavbarButtonClick = (path) => {
+        navigate(path);
+    }
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", backgroundColor: "black", color: "white" }}>
@@ -39,9 +66,12 @@ function DrawerAppBar(props) {
             />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
+                    <ListItem key={item.text} disablePadding>
                         <ListItemButton sx={{ textAlign: "center" }}>
-                            <ListItemText primary={item} />
+                            <ListItemIcon sx={{ color: "white" }}>
+                                {item.icon}
+                            </ListItemIcon>
+                            <ListItemText primary={item.text} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -79,8 +109,10 @@ function DrawerAppBar(props) {
                             </Typography>
                             <Box sx={{ display: 'flex' }}>
                                 {navItems.map((item) => (
-                                    <Button key={item} sx={{ color: "#fff" }}>
-                                        {item}
+                                    <Button onClick={() => handleNavbarButtonClick(item.path)}
+                                        key={item.text} sx={{ color: "#fff", paddingRight: "50px" }}
+                                        startIcon={item.icon}>
+                                        {item.text}
                                     </Button>
                                 ))}
                             </Box>
