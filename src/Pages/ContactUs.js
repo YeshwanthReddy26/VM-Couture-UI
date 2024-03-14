@@ -2,9 +2,9 @@ import React from "react";
 
 import { Box } from "@mui/material";
 
-import img1 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/kalyaniSareepic.jpg";
-import img2 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/OrangeSareeWomen.png";
-import img3 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/RedSareeWomen.png";
+import img1 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/ContactPagePics/kalyaniSareepic.jpg";
+import img2 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/ContactPagePics/OrangeSareeWomen.png";
+import img3 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/ContactPagePics/RedSareeWomen.png";
 
 import PlaceIcon from '@mui/icons-material/Place';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -100,7 +100,7 @@ const ContactUs = () => {
             >
                 <div>
                     <p style={{ fontWeight: 'bold', margin: 0, fontSize: '24px', fontFamily: 'Arial, sans-serif', paddingBottom: '10px' }}>FOLLOW US TO GET THE LATEST UPDATES</p>
-                    <a href="https://www.instagram.com/____iamyesh__/" >
+                    <a href="https://www.instagram.com/____iamyesh__/" target="_blank" rel="noopener noreferrer">
                         <InstagramIcon sx={{ fontSize: 85, color: '#cd486b' }} />
                     </a>
                 </div>
