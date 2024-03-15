@@ -4,6 +4,8 @@ import Home from './Pages/Home';
 import DrawerAppBar from './Components/DrawerAppBar';
 import ContactUs from './Pages/ContactUs';
 import AboutUs from './Pages/AboutUs';
+import NotFound from './Pages/NotFound';
+import { Navigate } from 'react-router-dom';
 
 function App() {
   return (
@@ -11,17 +13,16 @@ function App() {
       <div className="App">
         <DrawerAppBar />
         <div style={{ paddingTop: "56px" }}>
-
           <Routes>
             <Route exact path="/" element={<Home />} />
-          </Routes>
 
-          <Routes>
             <Route exact path="/contact-us" element={<ContactUs />} />
-          </Routes>
 
-          <Routes>
             <Route exact path="/about-us" element={<AboutUs />} />
+
+            <Route exact path="/notfound" element={<NotFound />} />
+
+            <Route path="*" element={<Navigate to="/notfound" replace />} />
           </Routes>
         </div>
       </div>
