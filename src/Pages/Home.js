@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 
 import Box from '@mui/material/Box';
 import Masonry from '@mui/lab/Masonry';
-import img1 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/HomePagePics/image1.png";
-import img3 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/HomePagePics/image3.png";
 import img4 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/HomePagePics/image4.png";
 import img5 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/HomePagePics/image5.png";
 import img6 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/HomePagePics/image6.png";
@@ -12,59 +10,71 @@ import img8 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/Ho
 import img9 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/HomePagePics/image9.png";
 
 const Home = () => {
+  const [imagesInRow, setImagesInRow] = useState(3);
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 768) {
+        setImagesInRow(1);
+      } else if (screenWidth < 1024) {
+        setImagesInRow(2);
+      } else {
+        setImagesInRow(3);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
     const itemData = [
         {
           img: img9,
           title: 'image 1',
+          text: 'Wrapped in elegance, draped in grace.',
         },
         {
           img: img4,
           title: 'image 3',
+          text: 'Every fold tells a story.',
         },
         {
-          img: img3,
+          img: img8,
           title: 'image 4',
+          text: 'Wear with pride',
         },
         {
           img: img5,
           title: 'image 5',
+          text: 'Saree: Six yards of pure elegance.',
         },
         {
           img: img6,
           title: 'image 6',
+          text: 'A timeless piece of art',
         },
         {
           img: img7,
           title: 'image 7',
-        },
-        {
-          img: img8,
-          title: 'image 8',
-        },
-        {
-          img: img1,
-          title: 'image 9',
+          text: 'A symbol of grace and femininity.',
         },
       ];
 
     return (
         <>
             <Box sx={{ width: '100%', minHeight: 829}}>
-                <Masonry columns={3} spacing={1} sx={{margin: '10px'}}>
+                <Masonry columns={imagesInRow} spacing={1} sx={{margin: '10px'}}>
                     {itemData.map((item, index) => (
-                        <div key={index}>
+                        <div class="home-page-image-container" key={index}>
                             <img
+                                className="home-page-image"
                                 srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
                                 src={`${item.img}?w=162&auto=format`}
                                 alt={item.title}
                                 loading="lazy"
-                                style={{
-                                    borderTopLeftRadius: 0,
-                                    borderBottomRightRadius: 0,
-                                    display: 'block',
-                                    width: '100%',
-                                }}
                             />
+                            {/* <div class="home-page-image-text">{item.text}</div> */}
                         </div>
                     ))}
                 </Masonry>
