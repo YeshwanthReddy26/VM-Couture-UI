@@ -62,8 +62,10 @@ const Home = () => {
         open={openHomePageImageModal}
         onClose={handleCloseModal}
       >
-        <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-          <img src={selectedImage} alt="Selected" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+        <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
+          <div style={{ maxHeight: '90vh', maxWidth: '90vw', overflow: 'auto' }}>
+            <img src={selectedImage} alt="Selected" style={{ width: '100%', height: 'auto' }} />
+          </div>
         </Box>
       </Modal>
     </>
