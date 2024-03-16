@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+.home-page-image:hover {
+  filter: grayscale(100%);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+  transform: scale(1.5);
+}
+
+.home-page-image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.home-page-image {
+  display: block;
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center
+}
+
+/* .home-page-image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  color: darkblue;
+  font-size: 40px;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  font-family: sans-serif;
+  width: 98%;
+  text-align: left;
+} */
+
+/* .home-page-image-container:hover .home-page-image-text {
+  opacity: 15;
+  cursor: pointer;
+} */

@@ -60,10 +60,7 @@ const ContactUs = () => {
             <Box
                 height={500}
                 width={'100%'}
-                // my={0}
                 display="flex"
-            // alignItems="center"
-            // sx={{ border: '2px solid grey' }}
             >
                 <Box height={500} width={'100%'}>
                     <img src={img2} alt="not loading" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
