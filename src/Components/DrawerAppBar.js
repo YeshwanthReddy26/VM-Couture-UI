@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -45,6 +45,7 @@ function DrawerAppBar(props) {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const theme = useTheme();
     const isExtraSmall = !useMediaQuery(theme.breakpoints.up('sm'));
+    const [selectedButton, setSelectedButton] = useState(null);
 
     const navigate = useNavigate();
 
@@ -52,8 +53,9 @@ function DrawerAppBar(props) {
         setMobileOpen((prevState) => !prevState);
     };
 
-    const handleNavbarButtonClick = (path) => {
+    const handleNavbarButtonClick = (path, text) => {
         navigate(path);
+        setSelectedButton(text);
     }
 
     const drawer = (
@@ -67,7 +69,7 @@ function DrawerAppBar(props) {
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item.text} disablePadding>
-                        <ListItemButton sx={{ textAlign: "center" }}>
+                        <ListItemButton onClick={() => handleNavbarButtonClick(item.path, item.text)} sx={{ textAlign: "center" }}>
                             <ListItemIcon sx={{ color: "white" }}>
                                 {item.icon}
                             </ListItemIcon>
@@ -109,8 +111,13 @@ function DrawerAppBar(props) {
                             </Typography>
                             <Box sx={{ display: 'flex' }}>
                                 {navItems.map((item) => (
-                                    <Button onClick={() => handleNavbarButtonClick(item.path)}
-                                        key={item.text} sx={{ color: "#fff", paddingRight: "50px" }}
+                                    <Button onClick={() => handleNavbarButtonClick(item.path, item.text)}
+                                        key={item.text} 
+                                        sx={{ 
+                                            backgroundColor: 'black',
+                                            color: selectedButton === item.text ? '#ff8921' : 'white',
+                                            paddingRight: "50px" 
+                                        }}
                                         startIcon={item.icon}>
                                         {item.text}
                                     </Button>

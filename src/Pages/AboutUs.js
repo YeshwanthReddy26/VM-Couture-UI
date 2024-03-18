@@ -5,6 +5,7 @@ import { Box } from "@mui/system";
 const AboutUs = () => {
     return (
         <>
+            <div style={{ backgroundColor: "darkgrey", minHeight: "100vh" }}>
             <Box
                 sx={{
                     display: 'flex',
@@ -22,8 +23,8 @@ const AboutUs = () => {
                     <p style={{ marginLeft: '200px', marginRight: '200px', fontSize: '20px', fontFamily: 'Verdana, sans-serif' }}>Thank you for choosing VM Couture for your saree needs.</p>
                 </div>
             </Box>
+        </div>
         </>
-
     );
 }
 
