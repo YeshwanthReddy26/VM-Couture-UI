@@ -7,8 +7,12 @@ import AboutUs from './Pages/AboutUs';
 import NotFound from './Pages/NotFound';
 import { Navigate } from 'react-router-dom';
 import QualityAssuranceFooter from './Components/QualityAssuranceFooter';
+import { homePageItemsData } from './Utils/Constants';
+import CollectionDetails from './Pages/CollectionDetails';
+import { replaceSpaceWithHyphen } from './Utils/BaseUtils';
 
 function App() {
+
   return (
     <Router >
       <div className="App">
@@ -23,6 +27,16 @@ function App() {
             <Route exact path="/about-us" element={<AboutUs />} />
 
             <Route exact path="/notfound" element={<NotFound />} />
+
+            {/* Map over homePageItemsData to dynamically create routes */}
+            {homePageItemsData.map(item => (
+              <Route
+                key={item.text}
+                exact
+                path={`/${replaceSpaceWithHyphen(item.text)}`}
+                element={<CollectionDetails item={item} />}
+              />
+            ))}
 
             <Route path="*" element={<Navigate to="/notfound" replace />} />
           </Routes>

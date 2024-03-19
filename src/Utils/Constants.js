@@ -8,33 +8,39 @@ import img9 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/Ho
 const homePageItemsData = [
     {
       img: img9,
-      title: 'image 1',
-      text: 'Wrapped in elegance, draped in grace.',
+      title: 'image',
+      text: 'Black zari weaved saree',
+      price: '₹ 14,999',
     },
     {
       img: img4,
-      title: 'image 3',
-      text: 'Every fold tells a story.',
+      title: 'image',
+      text: 'Splendid dark red saree',
+      price: '₹ 9,999',
     },
     {
       img: img8,
-      title: 'image 4',
-      text: 'Wear with pride',
+      title: 'image',
+      text: 'Magenta embroidered saree',
+      price: '₹ 14,999',
     },
     {
       img: img5,
-      title: 'image 5',
-      text: 'Saree: Six yards of pure elegance.',
+      title: 'image',
+      text: 'Ruby red bridal saree',
+      price: '₹ 14,999',
     },
     {
       img: img6,
-      title: 'image 6',
-      text: 'A timeless piece of art',
+      title: 'image',
+      text: 'Classic maroon and plane saree',
+      price: '₹ 14,999',
     },
     {
       img: img7,
-      title: 'image 7',
-      text: 'A symbol of grace and femininity.',
+      title: 'image',
+      text: 'Conch sheel green work saree',
+      price: '₹ 14,999',
     },
   ];
 
