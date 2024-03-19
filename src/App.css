@@ -77,3 +77,13 @@
     border-top: solid 1px rgba(81, 29, 0, .1);
 }
 }
+
+.collection-item-image {
+  height: 500px;
+}
+
+@media (min-width: 760px) {
+  .collection-item-image {
+      height: 900px;
+  }
+}

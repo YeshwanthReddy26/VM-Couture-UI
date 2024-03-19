@@ -11,28 +11,31 @@ const CollectionDetails = ({ item }) => {
                     display: 'flex',
                     justifyContent: 'left',
                     width: '100%',
-                    marginTop: '20px',
-                    marginLeft: '10px',
+                    marginTop: { xs: '0px', sm: '20px' },
+                    marginLeft: { xs: '0px', sm: '10px' },
+                    flexDirection: { xs: 'column', sm: 'row' },
                 }}
             >
                 <div 
                    style={{ 
-                    width: '60%',
+                    width: '100%',
+                    marginBottom: { xs: '20px', sm: 0 },
+                    marginRight: { xs: 0, sm: '20px' },
                 }}>
                     <img
                         src={item.img}
                         alt="SelectedImage"
                         style={{
                             width: '100%',
-                            height: '1050px',
                             display: 'block',
                             objectFit: 'cover',
                             objectPosition: 'center',
                         }}
+                        className="collection-item-image"
                     />
                 </div>
 
-                <div style={{ width: '40%' }}>
+                <div style={{ width: '100%' }}>
                     <div>
                         <h1 style={{fontSize: '36px', marginBottom: '10px'}}>{item.text}</h1>
                     </div>
