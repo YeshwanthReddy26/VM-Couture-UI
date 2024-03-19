@@ -7,7 +7,7 @@ import img4 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/Qu
 function QualityAssuranceFooter() {
 
   return (
-    <div class="QualityAssuranceFooterClass" style={{padding:'25px'}}>
+    <div class="QualityAssuranceFooterClass">
       <div>
         <div>
           <div class="QualityAssuranceFooterElement QualityAssuranceFooterSlider" style={{paddingTop:'15px'}}>
