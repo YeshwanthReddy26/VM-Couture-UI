@@ -50,4 +50,27 @@ const homePageItemsData = [
     },
   ];
 
-  export {homePageItemsData};
+  const customerReviews = [
+    {
+      name: 'Chirra Divya Reddy',
+      location: 'Hastinapuram, Hyderabad',
+      review: 'The saree exudes unparalleled quality, evident in its fine craftsmanship and luxurious fabric. Each intricate detail reflects the commitment to excellence, ensuring a garment that epitomizes elegance and sophistication.',
+    },
+    {
+      name: 'Vinitha Arra',
+      location: 'Rocktown, Hyderabad',
+      review: 'This saree is top-notch in quality, made with great care and using the finest materials. It looks stunning and feels amazing when worn, adding a touch of class to any event.',
+    },
+    {
+      name: 'Vijaya Chirra',
+      location: 'Amberpet, Hyderabad',
+      review: 'Absolutely adore this saree! The craftsmanship is simply divine, making it an irresistible addition to my collection.',
+    },
+    {
+      name: 'Sruthi Reddy',
+      location: 'Amberpet, Hyderabad',
+      review: 'This saree is an absolute gem! The lavish design at such a reasonable price makes it a must-have in any wardrobe.',
+    },
+  ];
+
+  export {homePageItemsData, customerReviews};
