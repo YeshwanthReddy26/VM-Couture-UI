@@ -33,16 +33,16 @@ const CollectionDetails = ({ item }) => {
 
                 <div className="collection-item-div2">
                     <Row style={{display: 'flex'}}>
-                        <h1 style={{ fontSize: '36px' }}>{item.text}</h1>
+                        <span style={{ fontSize: '36px' }}>{item.text}</span>
                     </Row>
 
-                    <Row style={{ display: 'flex', alignItems: 'center' }}>
+                    <Row style={{ display: 'flex', alignItems: 'center', fontSize: '20px', }}>
                         <h2>{item.price}</h2>
-                        <span style={{ fontSize: '14px', marginLeft: '15px' }}>MRP (Inclusive of all taxes)</span>
+                        <span style={{ fontSize: '15px', marginLeft: '15px' }}>MRP (Inclusive of all taxes)</span>
                     </Row>
 
                     <Row style={{ display: 'flex' }}>
-                        <span style={{ fontSize: '14px' }}>Product-ID: {item.productId}</span>
+                        <span style={{ fontSize: '20px' }}>Product-ID: {item.productId}</span>
                     </Row>
                 </div>
 
