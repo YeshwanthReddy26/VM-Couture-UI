@@ -11,36 +11,42 @@ const homePageItemsData = [
       title: 'image',
       text: 'Black zari weaved saree',
       price: '₹ 14,999',
+      productId: 'VM-123',
     },
     {
       img: img4,
       title: 'image',
       text: 'Splendid dark red saree',
       price: '₹ 9,999',
+      productId: 'VM-123',
     },
     {
       img: img8,
       title: 'image',
       text: 'Magenta embroidered saree',
       price: '₹ 14,999',
+      productId: 'VM-123',
     },
     {
       img: img5,
       title: 'image',
       text: 'Ruby red bridal saree',
       price: '₹ 14,999',
+      productId: 'VM-123',
     },
     {
       img: img6,
       title: 'image',
       text: 'Classic maroon and plane saree',
       price: '₹ 14,999',
+      productId: 'VM-123',
     },
     {
       img: img7,
       title: 'image',
       text: 'Conch sheel green work saree',
       price: '₹ 14,999',
+      productId: 'VM-123',
     },
   ];
 

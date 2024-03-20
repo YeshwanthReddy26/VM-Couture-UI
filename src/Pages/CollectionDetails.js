@@ -1,6 +1,7 @@
 import React from "react";
 
 import Box from '@mui/material/Box';
+import { Row } from "react-bootstrap";
 
 const CollectionDetails = ({ item }) => {
 
@@ -16,12 +17,7 @@ const CollectionDetails = ({ item }) => {
                     flexDirection: { xs: 'column', sm: 'row' },
                 }}
             >
-                <div 
-                   style={{ 
-                    width: '100%',
-                    marginBottom: { xs: '20px', sm: 0 },
-                    marginRight: { xs: 0, sm: '20px' },
-                }}>
+                <div className="collection-item-div1">
                     <img
                         src={item.img}
                         alt="SelectedImage"
@@ -35,20 +31,23 @@ const CollectionDetails = ({ item }) => {
                     />
                 </div>
 
-                <div style={{ width: '100%' }}>
-                    <div>
-                        <h1 style={{fontSize: '36px', marginBottom: '10px'}}>{item.text}</h1>
-                    </div>
+                <div className="collection-item-div2">
+                    <Row style={{display: 'flex'}}>
+                        <h1 style={{ fontSize: '36px' }}>{item.text}</h1>
+                    </Row>
 
-                    <div style={{display: 'inline-flex', alignItems: 'center'}}>
-                        <h2>
-                            {item.price}
-                        </h2>
-                        <span style={{fontSize: '14px', marginLeft: '15px'}}>MRP (Inclusive of all taxes)</span>
-                    </div>
+                    <Row style={{ display: 'flex', alignItems: 'center' }}>
+                        <h2>{item.price}</h2>
+                        <span style={{ fontSize: '14px', marginLeft: '15px' }}>MRP (Inclusive of all taxes)</span>
+                    </Row>
+
+                    <Row style={{ display: 'flex' }}>
+                        <span style={{ fontSize: '14px' }}>Product-ID: {item.productId}</span>
+                    </Row>
                 </div>
 
             </Box>
+
 
         </>
 
