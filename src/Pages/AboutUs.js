@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box } from "@mui/system";
+import CustomerReviews from "../Components/CustomerReviews";
 
 const AboutUs = () => {
     return (
@@ -12,6 +12,7 @@ const AboutUs = () => {
                 <p style={{ fontSize: '20px', fontFamily: 'Verdana, sans-serif' }}>Whether you're browsing for a special occasion or adding to your everyday wardrobe, we invite you to explore our collection of sarees and discover the perfect piece that reflects your individual style. Feel free to reach out to us with any questions or inquiries – we're here to assist you every step of the way.</p>
                 <p style={{ fontSize: '20px', fontFamily: 'Verdana, sans-serif' }}>Thank you for choosing VM Couture for your saree needs.</p>
             </div>
+            <CustomerReviews/>
         </>
     );
 }
