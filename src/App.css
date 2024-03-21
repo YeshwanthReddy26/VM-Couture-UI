@@ -212,3 +212,41 @@
     font-style: normal;
   }
 }
+
+.contactUs-page-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contactUs-page-container-item {
+  flex: 1 0 33.33%; /* Three items per row by default */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 500px;
+  overflow: hidden;
+}
+
+@media (max-width: 1050px) {
+  .contactUs-page-container-item {
+      flex: 1 0 50%; /* Two items per row for medium-sized screens */
+      height: 450px;
+      overflow: hidden;
+  }
+}
+
+@media (max-width: 700px) {
+  .contactUs-page-container-item {
+      flex: 1 0 100%; /* One item per row for small-sized screens */
+      height: 600px;
+      overflow: hidden;
+  }
+}
+
+@media (max-width: 400px) {
+  .contactUs-page-container-item {
+      flex: 1 0 100%; /* One item per row for small-sized screens */
+      height: 500px;
+      overflow: hidden;
+  }
+}
