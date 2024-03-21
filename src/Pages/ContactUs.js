@@ -19,71 +19,50 @@ const ContactUs = () => {
                 width={'100%'}
                 display="flex"
             >
-                <Box
-                    sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        height: 500,
-                        width: '100%',
-                    }}
-                >
-                    <div>
-                        <PlaceIcon sx={{ fontSize: 85 }} />
+                <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div >
+                        <PlaceIcon style={{ fontSize: 85 }} />
                         <p style={{ fontWeight: 'bold', margin: 0, fontSize: '24px', fontFamily: 'Arial, sans-serif' }}>WE ARE LOCATED AT</p>
                         <p style={{ margin: 0, fontSize: '20px', fontFamily: 'Verdana, sans-serif' }}>Rocktown colony,</p>
                         <p style={{ margin: 0, fontSize: '20px', fontFamily: 'Verdana, sans-serif' }}>Hyderabad</p>
                     </div>
-                </Box>
+                </div>
 
-                <Box height={500} width={'100%'}>
+                <div style={{ width: '100%' }}>
                     <img src={img1} alt="not loading" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </Box>
+                </div>
 
-                <Box
-                    sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        height: 500,
-                        width: '100%',
-                    }}
-                >
+                <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <div>
                         <WhatsAppIcon sx={{ fontSize: 85 }} />
                         <p style={{ fontWeight: 'bold', margin: 0, fontSize: '24px', fontFamily: 'Arial, sans-serif' }}>WHATSAPP US</p>
                         <p style={{ margin: 0, fontSize: '20px', fontFamily: 'Verdana, sans-serif' }}>8688026814</p>
                         <p style={{ margin: 0, fontSize: '20px', fontFamily: 'Verdana, sans-serif' }}>EMAIL: buntyyeshwanth123@gmail.com</p>
                     </div>
-                </Box>
+                </div>
             </Box>
             <Box
                 height={500}
                 width={'100%'}
                 display="flex"
             >
-                <Box height={500} width={'100%'}>
+
+                <div style={{ width: '100%' }}>
                     <img src={img2} alt="not loading" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </Box>
-                <Box
-                    sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        height: 500,
-                        width: '100%',
-                    }}
-                >
+                </div>
+
+                <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <div>
                         <AccessAlarmIcon sx={{ fontSize: 85 }} />
                         <p style={{ fontWeight: 'bold', margin: 0, fontSize: '24px', fontFamily: 'Arial, sans-serif' }}>WE ARE AVAILABLE</p>
                         <p style={{ margin: 0, fontSize: '20px', fontFamily: 'Verdana, sans-serif' }}>Monday-Sunday</p>
                         <p style={{ margin: 0, fontSize: '20px', fontFamily: 'Verdana, sans-serif' }}>9:30 am - 11:00 pm</p>
                     </div>
-                </Box>
-                <Box height={500} width={'100%'}>
+                </div>
+
+                <div style={{ width: '100%' }}>
                     <img src={img3} alt="not loading" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </Box>
+                </div>
             </Box>
             <Box
                 sx={{
