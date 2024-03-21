@@ -4,20 +4,16 @@ import { customerReviews } from '../Utils/Constants';
 function CustomerReviews() {
     const [index, setIndex] = useState(0);
     
-    const handlePrevClick = () => {
-        if(index === 0){
-            setIndex(customerReviews.length - 1);
-        } else {
-            setIndex(index - 1);
-        }
+    const handleNextClick = () => {
+        setTimeout(() => {
+            setIndex((prevIndex) => (prevIndex + 1) % customerReviews.length);
+        }, 500);
     };
 
-    const handleNextClick = () => {
-        if(index === customerReviews.length - 1){
-            setIndex(0);
-        } else {
-            setIndex(index + 1);
-        }
+    const handlePrevClick = () => {
+        setTimeout(() => {
+            setIndex((prevIndex) => (prevIndex - 1 + customerReviews.length) % customerReviews.length);
+        }, 500);
     };
 
     return (
