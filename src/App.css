@@ -250,3 +250,17 @@
       overflow: hidden;
   }
 }
+
+.delivery-policy{
+  display: flex;
+  align-items: center;
+  padding: 19px 40px 0px 0px;
+}
+
+.deliver-icon {
+  padding-right: 10px;
+}
+
+.check-delivery-status {
+  text-align: left;
+}

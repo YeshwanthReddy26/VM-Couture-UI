@@ -12,6 +12,8 @@ const homePageItemsData = [
       text: 'Black zari weaved saree',
       price: '₹ 14,999',
       productId: 'VM-123',
+      returnAvailableDays: 0,
+      deliveryCharges: 0,
     },
     {
       img: img4,
@@ -19,6 +21,8 @@ const homePageItemsData = [
       text: 'Splendid dark red saree',
       price: '₹ 9,999',
       productId: 'VM-123',
+      returnAvailableDays: 15,
+      deliveryCharges: 50,
     },
     {
       img: img8,
@@ -26,6 +30,8 @@ const homePageItemsData = [
       text: 'Magenta embroidered saree',
       price: '₹ 14,999',
       productId: 'VM-123',
+      returnAvailableDays: 20,
+      deliveryCharges: 100,
     },
     {
       img: img5,
@@ -33,6 +39,8 @@ const homePageItemsData = [
       text: 'Ruby red bridal saree',
       price: '₹ 14,999',
       productId: 'VM-123',
+      returnAvailableDays: 7,
+      deliveryCharges: 0,
     },
     {
       img: img6,
@@ -40,6 +48,8 @@ const homePageItemsData = [
       text: 'Classic maroon and plane saree',
       price: '₹ 14,999',
       productId: 'VM-123',
+      returnAvailableDays: 6,
+      deliveryCharges: 0,
     },
     {
       img: img7,
@@ -47,6 +57,8 @@ const homePageItemsData = [
       text: 'Conch sheel green work saree',
       price: '₹ 14,999',
       productId: 'VM-123',
+      returnAvailableDays: 0,
+      deliveryCharges: 0,
     },
   ];
 
