@@ -1,0 +1,18 @@
+.QualityAssuranceFooterElement {
+    flex: 0 0 100%;
+}
+
+@media (min-width: 758px) {
+    .QualityAssuranceFooterItem {
+        /* padding-top: 1%; */
+        flex: 0 0 25%;
+    }
+}
+
+@media (min-width: 768px) {
+    .QualityAssuranceFooterClass .QualityAssuranceFooterSlider {
+        display: flex;
+        flex-wrap: wrap;
+        border-top: solid 1px rgba(81, 29, 0, .1);
+    }
+}
