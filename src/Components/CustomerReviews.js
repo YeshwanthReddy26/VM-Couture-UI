@@ -1,5 +1,6 @@
 import {React, useState} from 'react';
 import { customerReviews } from '../Utils/Constants';
+import '../css/CustomerReviews.css'
 
 function CustomerReviews() {
     const [index, setIndex] = useState(0);

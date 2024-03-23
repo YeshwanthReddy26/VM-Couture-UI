@@ -1,6 +1,7 @@
 import React from "react";
 
 import CustomerReviews from "../Components/CustomerReviews";
+import '../css/AboutUs.css'
 
 const AboutUs = () => {
     return (

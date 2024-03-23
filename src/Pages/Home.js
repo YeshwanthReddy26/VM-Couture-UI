@@ -5,6 +5,7 @@ import Masonry from '@mui/lab/Masonry';
 import { homePageItemsData } from '../Utils/Constants';
 import { useNavigate } from "react-router-dom";
 import { replaceSpaceWithHyphen } from '../Utils/BaseUtils';
+import '../css/Home.css'
 
 const Home = () => {
   const [imagesInRow, setImagesInRow] = useState(3);

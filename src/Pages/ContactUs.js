@@ -10,6 +10,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import '../css/ContactUs.css'
 
 const ContactUs = () => {
     return (

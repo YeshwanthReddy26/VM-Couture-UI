@@ -3,6 +3,7 @@ import img1 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/Qu
 import img2 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/QualityAssuranceImages/assuredQuality.png";
 import img3 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/QualityAssuranceImages/securePayments.png";
 import img4 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/QualityAssuranceImages/empoweringWeavers.png";
+import '../css/QualityAssuranceFooter.css'
 
 function QualityAssuranceFooter() {
   return (
