@@ -44,6 +44,12 @@
   }
 }
 
+.delivery-policy-div {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
 .delivery-policy {
   display: flex;
   align-items: center;
@@ -89,6 +95,18 @@
   .mrp-details {
     font-size: 12px;
     margin-left: 0px;
+  }
+
+  .delivery-policy-div {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .delivery-policy {
+    display: flex;
+    align-items: center;
+    padding-top: 4px;
   }
 }
 

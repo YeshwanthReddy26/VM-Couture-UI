@@ -34,7 +34,7 @@ const CollectionDetails = ({ item }) => {
                         <span style={{ fontSize: '14px', color: '#666561' }}>Product-ID: {item.productId}</span>
                     </div>
 
-                    <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+                    <div className="delivery-policy-div">
                         <div class="delivery-policy delivery">
                             <img alt="logo" class="deliver-icon" src="https://www.manyavar.com/on/demandware.static/-/Library-Sites-ManyavarSharedLibrary/default/dw421157f7/images/delivery.svg" title="" />
                             <span class="check-delivery-status">
