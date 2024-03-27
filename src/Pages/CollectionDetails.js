@@ -7,16 +7,7 @@ const CollectionDetails = ({ item }) => {
 
     return (
         <>
-            <Box
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'left',
-                    width: '100%',
-                    marginTop: { xs: '0px', sm: '20px' },
-                    marginLeft: { xs: '0px', sm: '10px' },
-                    flexDirection: { xs: 'column', sm: 'row' },
-                }}
-            >
+            <div className="collection-item-page">
                 <div className="collection-item-div1">
                     <img
                         src={item.img}
@@ -66,7 +57,7 @@ const CollectionDetails = ({ item }) => {
 
                 </div>
 
-            </Box>
+            </div>
 
 
         </>
