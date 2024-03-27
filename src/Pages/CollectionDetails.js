@@ -1,40 +1,57 @@
-import React from "react";
+import { React, useState } from 'react';
 import '../css/CollectionDetails.css'
 
 const CollectionDetails = ({ item }) => {
+    const totalCollectionImages = item.collectionImages;
+    const [currentDisplayImageUrl, setCurrentDisplayImageUrl] = useState(null);
+
+    const handleImageClick = (imageUrl) => {
+        setCurrentDisplayImageUrl(imageUrl);
+    };
 
     return (
         <>
             <div className="collection-item-page">
+                <div className="collection-items-images-container">
+                    {totalCollectionImages.map((imageUrl) => (
+                        <img
+                            src={imageUrl}
+                            alt="SelectedImage"
+                            className="collection-item-images"
+                            onClick={() => handleImageClick(imageUrl)}
+                        />
+                    ))}
+                </div>
+
                 <div className="collection-item-div1">
                     <img
-                        src={item.img}
-                        alt="SelectedImage"
+                        src={currentDisplayImageUrl === null ? item.displayImage : currentDisplayImageUrl}
+                        alt="SelectedImage1"
+                        className="collection-item-image"
                         style={{
                             width: '100%',
                             display: 'block',
                             objectFit: 'cover',
                             objectPosition: 'center',
                         }}
-                        className="collection-item-image"
                     />
                 </div>
 
                 <div className="collection-item-div2">
+                    <div style={{ display: 'flex', marginBottom: '10px' }}>
+                        <span style={{ fontSize: '36px', textAlign: 'left', lineHeight: '40px' }}>{item.text}</span>
+                    </div>
+
+                    <div className="price-tag">
+                        <p className="mrp-price">{item.price}</p>
+                        <span className="mrp-details">MRP (Inclusive of all taxes)</span>
+                    </div>
+
                     <div style={{ display: 'flex' }}>
-                        <span style={{ fontSize: '36px', textAlign: 'left' }}>{item.text}</span>
+                        <span style={{ fontSize: '14px', color: '#666561' }}>Product-ID: {item.productId}</span>
                     </div>
 
-                    <div style={{ display: 'flex', alignItems: 'center', fontSize: '20px', }}>
-                        <h2>{item.price}</h2>
-                        <span style={{ fontSize: '15px', marginLeft: '15px' }}>MRP (Inclusive of all taxes)</span>
-                    </div>
-
-                    <div style={{ display: 'flex' }}>
-                        <span style={{ fontSize: '14px' }}>Product-ID: {item.productId}</span>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+                    <div className="delivery-policy-div">
                         <div class="delivery-policy delivery">
                             <img alt="logo" class="deliver-icon" src="https://www.manyavar.com/on/demandware.static/-/Library-Sites-ManyavarSharedLibrary/default/dw421157f7/images/delivery.svg" title="" />
                             <span class="check-delivery-status">
@@ -52,7 +69,6 @@ const CollectionDetails = ({ item }) => {
                             </span>
                         </div>
                     </div>
-
                 </div>
 
             </div>

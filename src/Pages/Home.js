@@ -20,8 +20,8 @@ const Home = () => {
             <div className="home-page-image-container" key={index}>
               <img
                 className="home-page-image"
-                srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}
-                src={`${item.img}?w=162&auto=format`}
+                srcSet={`${item.displayImage}?w=162&auto=format&dpr=2 2x`}
+                src={`${item.displayImage}?w=162&auto=format`}
                 alt={item.title}
                 loading="lazy"
                 onClick={() => handleHomePageCollectionClick(item)}
