@@ -6,23 +6,49 @@ const CollectionDetails = ({ item }) => {
     return (
         <>
             <div className="collection-item-page">
+                <div className="collection-items-images-container">
+                    <img
+                        src={item.img}
+                        alt="SelectedImage"
+                        className="collection-item-images"
+                    />
+
+                    <img
+                        src={item.img}
+                        alt="SelectedImage"
+                        className="collection-item-images"
+                    />
+
+                    <img
+                        src={item.img}
+                        alt="SelectedImage"
+                        className="collection-item-images"
+                    />
+
+                    <img
+                        src={item.img}
+                        alt="SelectedImage"
+                        className="collection-item-images"
+                    />
+                </div>
+
                 <div className="collection-item-div1">
                     <img
                         src={item.img}
                         alt="SelectedImage"
+                        className="collection-item-image"
                         style={{
                             width: '100%',
                             display: 'block',
                             objectFit: 'cover',
                             objectPosition: 'center',
                         }}
-                        className="collection-item-image"
                     />
                 </div>
 
                 <div className="collection-item-div2">
-                    <div style={{ display: 'flex', marginBottom: '10px'}}>
-                        <span style={{ fontSize: '36px', textAlign: 'left', lineHeight: '40px'}}>{item.text}</span>
+                    <div style={{ display: 'flex', marginBottom: '10px' }}>
+                        <span style={{ fontSize: '36px', textAlign: 'left', lineHeight: '40px' }}>{item.text}</span>
                     </div>
 
                     <div className="price-tag">
