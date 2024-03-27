@@ -1,7 +1,5 @@
 import React from "react";
 
-import { Box } from "@mui/material";
-
 import img1 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/ContactPagePics/kalyaniSareepic.jpg";
 import img2 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/ContactPagePics/OrangeSareeWomen.png";
 import img3 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/ContactPagePics/RedSareeWomen.png";
