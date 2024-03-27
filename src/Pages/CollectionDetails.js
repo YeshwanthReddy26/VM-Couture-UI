@@ -21,17 +21,17 @@ const CollectionDetails = ({ item }) => {
                 </div>
 
                 <div className="collection-item-div2">
-                    <div style={{ display: 'flex' }}>
-                        <span style={{ fontSize: '36px', textAlign: 'left' }}>{item.text}</span>
+                    <div style={{ display: 'flex', marginBottom: '10px'}}>
+                        <span style={{ fontSize: '36px', textAlign: 'left', lineHeight: '40px'}}>{item.text}</span>
                     </div>
 
-                    <div style={{ display: 'flex', alignItems: 'center', fontSize: '20px', }}>
-                        <h2>{item.price}</h2>
-                        <span style={{ fontSize: '15px', marginLeft: '15px' }}>MRP (Inclusive of all taxes)</span>
+                    <div className="price-tag">
+                        <p className="mrp-price">{item.price}</p>
+                        <span className="mrp-details">MRP (Inclusive of all taxes)</span>
                     </div>
 
                     <div style={{ display: 'flex' }}>
-                        <span style={{ fontSize: '14px' }}>Product-ID: {item.productId}</span>
+                        <span style={{ fontSize: '14px', color: '#666561' }}>Product-ID: {item.productId}</span>
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'flex-start' }}>
@@ -52,7 +52,6 @@ const CollectionDetails = ({ item }) => {
                             </span>
                         </div>
                     </div>
-
                 </div>
 
             </div>
