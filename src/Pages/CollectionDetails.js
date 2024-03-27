@@ -1,41 +1,32 @@
-import React from "react";
+import { React, useState } from 'react';
 import '../css/CollectionDetails.css'
 
 const CollectionDetails = ({ item }) => {
+    const totalCollectionImages = item.collectionImages;
+    const [currentDisplayImageUrl, setCurrentDisplayImageUrl] = useState(null);
+
+    const handleImageClick = (imageUrl) => {
+        setCurrentDisplayImageUrl(imageUrl);
+    };
 
     return (
         <>
             <div className="collection-item-page">
                 <div className="collection-items-images-container">
-                    <img
-                        src={item.img}
-                        alt="SelectedImage"
-                        className="collection-item-images"
-                    />
-
-                    <img
-                        src={item.img}
-                        alt="SelectedImage"
-                        className="collection-item-images"
-                    />
-
-                    <img
-                        src={item.img}
-                        alt="SelectedImage"
-                        className="collection-item-images"
-                    />
-
-                    <img
-                        src={item.img}
-                        alt="SelectedImage"
-                        className="collection-item-images"
-                    />
+                    {totalCollectionImages.map((imageUrl) => (
+                        <img
+                            src={imageUrl}
+                            alt="SelectedImage"
+                            className="collection-item-images"
+                            onClick={() => handleImageClick(imageUrl)}
+                        />
+                    ))}
                 </div>
 
                 <div className="collection-item-div1">
                     <img
-                        src={item.img}
-                        alt="SelectedImage"
+                        src={currentDisplayImageUrl === null ? item.displayImage : currentDisplayImageUrl}
+                        alt="SelectedImage1"
                         className="collection-item-image"
                         style={{
                             width: '100%',
