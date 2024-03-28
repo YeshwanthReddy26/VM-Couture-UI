@@ -12,7 +12,7 @@ const CollectionDetails = ({ item }) => {
     return (
         <>
             <div className="collection-item-page">
-                <div className="collection-items-images-container">
+                <div className="collection-item-div1">
                     {totalCollectionImages.map((imageUrl) => (
                         <img
                             src={imageUrl}
@@ -23,7 +23,7 @@ const CollectionDetails = ({ item }) => {
                     ))}
                 </div>
 
-                <div className="collection-item-div1">
+                <div className="collection-item-div2">
                     <img
                         src={currentDisplayImageUrl === null ? item.displayImage : currentDisplayImageUrl}
                         alt="SelectedImage1"
@@ -37,9 +37,9 @@ const CollectionDetails = ({ item }) => {
                     />
                 </div>
 
-                <div className="collection-item-div2">
+                <div className="collection-item-div3">
                     <div style={{ display: 'flex', marginBottom: '10px' }}>
-                        <span style={{ fontSize: '36px', textAlign: 'left', lineHeight: '40px' }}>{item.text}</span>
+                        <span className="collection-item-name">{item.text}</span>
                     </div>
 
                     <div className="price-tag">
@@ -48,7 +48,7 @@ const CollectionDetails = ({ item }) => {
                     </div>
 
                     <div style={{ display: 'flex' }}>
-                        <span style={{ fontSize: '14px', color: '#666561' }}>Product-ID: {item.productId}</span>
+                        <span className='product-id'>Product-ID: {item.productId}</span>
                     </div>
 
                     <div className="delivery-policy-div">

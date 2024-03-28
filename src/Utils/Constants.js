@@ -1,70 +1,43 @@
-import img4 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/HomePagePics/image4.png";
-import img5 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/HomePagePics/image5.png";
-import img6 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/HomePagePics/image6.png";
-import img7 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/HomePagePics/image7.png";
-import img8 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/HomePagePics/image8.png";
-import img9 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/HomePagePics/image9.png";
+import pg120 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-PG120.jpeg";
+import pg121 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-PG121.jpeg";
+import pg122 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-PG122.jpeg";
+
+import sg100 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-SG100.jpeg";
+
+import pk100 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-PK100.jpeg";
+import pk101 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-PK101.jpeg";
+import pk102 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-PK102.jpeg";
 
 const homePageItemsData = [
   {
-    displayImage: img9,
-    collectionImages: [img9, img4, img8, img5, img6, img4],
+    displayImage: pg120,
+    collectionImages: [pg120, pg121, pg122],
     title: 'image',
-    text: 'Black zari weaved saree',
+    text: 'Aqua Blue Mashru Silk Silver Zari Brocade Weaved Banarasi Saree',
     price: '₹ 14,999',
-    productId: 'VM-123',
+    productId: 'PG-12',
     returnAvailableDays: 0,
     deliveryCharges: 0,
   },
   {
-    displayImage: img4,
-    collectionImages: [img9, img4, img8, img5, img6, img4],
+    displayImage: sg100,
+    collectionImages: [sg100],
     title: 'image',
-    text: 'Splendid dark red saree',
+    text: 'Sea Green Colored, Pure Handwoven Banaras Silk Saree',
     price: '₹ 9,999',
     productId: 'VM-123',
     returnAvailableDays: 15,
     deliveryCharges: 50,
   },
   {
-    displayImage: img8,
-    collectionImages: [img9, img4, img8, img5, img6, img4],
+    displayImage: pk100,
+    collectionImages: [pk100, pk101, pk102],
     title: 'image',
-    text: 'Magenta embroidered saree',
+    text: 'Lilac Mashru Silk Silver Zari Brocade Weaved Banarasi Saree',
     price: '₹ 14,999',
     productId: 'VM-123',
     returnAvailableDays: 20,
     deliveryCharges: 100,
-  },
-  {
-    displayImage: img5,
-    collectionImages: [img9, img4, img8, img5, img6, img4],
-    title: 'image',
-    text: 'Ruby red bridal saree',
-    price: '₹ 14,999',
-    productId: 'VM-123',
-    returnAvailableDays: 7,
-    deliveryCharges: 0,
-  },
-  {
-    displayImage: img6,
-    collectionImages: [img9, img4, img8, img5, img6, img4],
-    title: 'image',
-    text: 'Classic maroon and plane saree',
-    price: '₹ 14,999',
-    productId: 'VM-123',
-    returnAvailableDays: 6,
-    deliveryCharges: 0,
-  },
-  {
-    displayImage: img7,
-    collectionImages: [img9, img4, img8, img5, img6, img4],
-    title: 'image',
-    text: 'Conch sheel green work saree',
-    price: '₹ 14,999',
-    productId: 'VM-123',
-    returnAvailableDays: 0,
-    deliveryCharges: 0,
   },
 ];
 
