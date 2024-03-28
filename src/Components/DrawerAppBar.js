@@ -63,7 +63,7 @@ function DrawerAppBar(props) {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", backgroundColor: "black", color: "white" }}>
             <Typography variant="h6" sx={{ my: '12px', color: "white" }}>
-                VM Couture
+                CompanyName
             </Typography>
             <Divider
                 style={{ backgroundColor: 'white' }}
@@ -71,7 +71,7 @@ function DrawerAppBar(props) {
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item.text} disablePadding>
-                        <ListItemButton onClick={() => handleNavbarButtonClick(item.path)} sx={{ textAlign: "center" }}>
+                        <ListItemButton className="mobile-navbar-button" onClick={() => handleNavbarButtonClick(item.path)} sx={{ textAlign: "center" }}>
                             <ListItemIcon sx={{ color: "white" }}>
                                 {item.icon}
                             </ListItemIcon>
@@ -109,7 +109,7 @@ function DrawerAppBar(props) {
                                 component="div"
                                 sx={{ flex: 1, display: 'flex', alignItems: 'center', paddingLeft: '30px' }}
                             >
-                                VM COUTURE
+                                CompanyName
                             </Typography>
                             <Box sx={{ display: 'flex' }}>
                                 {navItems.map((item) => (
@@ -118,7 +118,8 @@ function DrawerAppBar(props) {
                                         sx={{
                                             backgroundColor: 'black',
                                             color: currentPath === item.path ? '#ff8921' : 'white',
-                                            paddingRight: "50px"
+                                            paddingRight: "36px",
+                                            fontSize: "13px"
                                         }}
                                         startIcon={item.icon}>
                                         {item.text}
