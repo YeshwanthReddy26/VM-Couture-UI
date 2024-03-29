@@ -90,6 +90,14 @@
   color: #666561;
 }
 
+.seller-details{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 15px;
+  text-align: left;
+}
+
 @media (max-width: 1000px) {
   .collection-item-div1 {
     order: 2;

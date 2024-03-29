@@ -1,4 +1,5 @@
 import { React, useState } from 'react';
+import { replaceSpaceWithHyphen } from '../Utils/BaseUtils';
 import '../css/CollectionDetails.css'
 
 const CollectionDetails = ({ item }) => {
@@ -8,6 +9,8 @@ const CollectionDetails = ({ item }) => {
     const handleImageClick = (imageUrl) => {
         setCurrentDisplayImageUrl(imageUrl);
     };
+
+    const sellerProductsLink = "http://localhost:3000/" + replaceSpaceWithHyphen(item.seller);
 
     return (
         <>
@@ -69,6 +72,12 @@ const CollectionDetails = ({ item }) => {
                             </span>
                         </div>
                     </div>
+
+                    <div className='seller-details'>
+                        <span >Seller: {item.seller}</span>
+                        <a href={sellerProductsLink} style={{fontSize: '13px', fontFamily: 'Verdana, sans-serif'}} target="_blank" rel="noopener noreferrer">View other products from this seller</a>
+                    </div>
+
                 </div>
 
             </div>

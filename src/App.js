@@ -10,6 +10,7 @@ import QualityAssuranceFooter from './Components/QualityAssuranceFooter';
 import { homePageItemsData } from './Utils/Constants';
 import CollectionDetails from './Pages/CollectionDetails';
 import { replaceSpaceWithHyphen } from './Utils/BaseUtils';
+import SellerProducts from './Pages/SellerProducts';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
     <Router >
       <div className="App">
         <DrawerAppBar />
-        
+
         <div style={{ paddingTop: "56px" }}>
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -30,13 +31,23 @@ function App() {
 
             {/* Map over homePageItemsData to dynamically create routes */}
             {homePageItemsData.map(item => (
-              <Route
-                key={item.text}
-                exact
-                path={`/${replaceSpaceWithHyphen(item.text)}`}
-                element={<CollectionDetails item={item} />}
-              />
+              <>
+                <Route
+                  key={item.text}
+                  exact
+                  path={`/${replaceSpaceWithHyphen(item.text)}`}
+                  element={<CollectionDetails item={item} />}
+                />
+
+                <Route
+                  key={item.seller}
+                  exact
+                  path={`/${replaceSpaceWithHyphen(item.seller)}`}
+                  element={<SellerProducts sellerName={item.seller} />}
+                />
+              </>
             ))}
+
 
             <Route path="*" element={<Navigate to="/notfound" replace />} />
           </Routes>
