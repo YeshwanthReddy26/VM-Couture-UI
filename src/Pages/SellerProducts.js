@@ -1,0 +1,39 @@
+import React from 'react';
+
+import { homePageItemsData } from '../Utils/Constants';
+import { useNavigate } from "react-router-dom";
+import { replaceSpaceWithHyphen } from '../Utils/BaseUtils';
+import '../css/SellerProducts.css'
+
+const SellerProducts = ({sellerName}) => {
+    const navigate = useNavigate();
+
+    const handleSellerProductsPageCollectionClick = (item) => {
+        navigate(replaceSpaceWithHyphen(item.text));
+    };
+
+    return (
+        <>
+            <div style={{ width: '100%' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                    {homePageItemsData.map((item, index) => (
+                        (item.seller === sellerName) && (
+                            <div className="seller-products-page-image-container" key={index}>
+                                <img
+                                    className="seller-products-page-image"
+                                    srcSet={`${item.displayImage}?w=162&auto=format&dpr=2 2x`}
+                                    src={`${item.displayImage}?w=162&auto=format`}
+                                    alt={item.title}
+                                    loading="lazy"
+                                    onClick={() => handleSellerProductsPageCollectionClick(item)}
+                                />
+                            </div>
+                        )
+                    ))}
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default SellerProducts;

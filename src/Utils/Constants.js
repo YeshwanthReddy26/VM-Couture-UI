@@ -18,6 +18,7 @@ const homePageItemsData = [
     productId: 'PG-12',
     returnAvailableDays: 0,
     deliveryCharges: 0,
+    seller: 'VM-Couture',
   },
   {
     displayImage: sg100,
@@ -28,6 +29,7 @@ const homePageItemsData = [
     productId: 'VM-123',
     returnAvailableDays: 15,
     deliveryCharges: 50,
+    seller: 'VM-Couture',
   },
   {
     displayImage: pk100,
@@ -36,8 +38,9 @@ const homePageItemsData = [
     text: 'Lilac Mashru Silk Silver Zari Brocade Weaved Banarasi Saree',
     price: '₹ 14,999',
     productId: 'VM-123',
-    returnAvailableDays: 20,
-    deliveryCharges: 100,
+    returnAvailableDays: 10,
+    deliveryCharges: 200,
+    seller: 'VM-Couture',
   },
 ];
 
