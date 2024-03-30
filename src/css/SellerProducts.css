@@ -37,6 +37,10 @@
         object-fit: cover;
         object-position: center;
     }
+
+    .seller-description{
+        margin: 5px 16px -13px 16px;
+    }
 }
 
 @media (max-width: 600px){
@@ -53,10 +57,18 @@
         object-fit: cover;
         object-position: center;
     }
+
+    .seller-description{
+        margin: 6px 16px -18px 16px;
+    }
 }
 
 @media (max-width: 450px){
     .seller-products-page-image {
         height: 450px;
+    }
+
+    .seller-description{
+        margin: 0px 16px -18px 16px;
     }
 }
