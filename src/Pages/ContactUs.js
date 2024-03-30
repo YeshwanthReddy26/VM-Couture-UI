@@ -18,7 +18,7 @@ const ContactUs = () => {
                     <div style={{ textAlign: 'center' }}>
                         <PlaceIcon style={{ fontSize: '85px' }} />
                         <p style={{ fontWeight: 'bold', margin: 0, fontSize: '24px', fontFamily: 'Arial, sans-serif' }}>WE ARE LOCATED AT</p>
-                        <p style={{ margin: 0, fontSize: '20px', fontFamily: 'Verdana, sans-serif' }}>Rocktown colony,</p>
+                        <p style={{ margin: 0, fontSize: '20px', fontFamily: 'Verdana, sans-serif' }}>Sai Nagar Colony,</p>
                         <p style={{ margin: 0, fontSize: '20px', fontFamily: 'Verdana, sans-serif' }}>Hyderabad</p>
                     </div>
                 </div>

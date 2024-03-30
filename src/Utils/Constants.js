@@ -7,6 +7,17 @@ import sg100 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/S
 import pk100 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-PK100.jpeg";
 import pk101 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-PK101.jpeg";
 import pk102 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-PK102.jpeg";
+import pk103 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-PK103.jpeg";
+
+import br100 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-BR100.jpeg";
+import br101 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-BR101.jpeg";
+import br102 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-BR102.jpeg";
+import br103 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-BR103.jpeg";
+import br104 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-BR104.jpeg";
+import br105 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-BR105.jpeg";
+
+import pp100 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-PP100.jpeg";
+import pp101 from "/Users/tnluser/Desktop/development/VM-Couture-UI/src/assets/SareePics/VM-PP101.jpeg";
 
 const homePageItemsData = [
   {
@@ -29,13 +40,35 @@ const homePageItemsData = [
     productId: 'VM-123',
     returnAvailableDays: 15,
     deliveryCharges: 50,
-    seller: 'VM Couture',
+    seller: 'Kalamandir',
   },
   {
     displayImage: pk100,
-    collectionImages: [pk100, pk101, pk102],
+    collectionImages: [pk100, pk101, pk102, pk103],
     title: 'image',
     text: 'Lilac Mashru Silk Silver Zari Brocade Weaved Banarasi Saree',
+    price: '₹ 14,999',
+    productId: 'VM-123',
+    returnAvailableDays: 10,
+    deliveryCharges: 200,
+    seller: 'VM Couture',
+  },
+  {
+    displayImage: br100,
+    collectionImages: [br100, br101, br102, br103, br104, br105],
+    title: 'image',
+    text: 'Red and Blue Silk Combo Sarees',
+    price: '₹ 29,999',
+    productId: 'VM-123',
+    returnAvailableDays: 10,
+    deliveryCharges: 200,
+    seller: 'Kalamandir',
+  },
+  {
+    displayImage: pp101,
+    collectionImages: [pp101, pp100],
+    title: 'image',
+    text: 'Purple Striped Zari Weaved Banarasi Saree',
     price: '₹ 14,999',
     productId: 'VM-123',
     returnAvailableDays: 10,
