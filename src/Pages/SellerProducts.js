@@ -16,6 +16,11 @@ const SellerProducts = ({sellerDetails}) => {
     return (
         <>
             <div style={{ width: '100%' }}>
+                <div className='seller-products-page-description'>
+                    <div style={{fontSize: '25px', fontFamily: 'sans-serif'}}>WOMEN'S SAREES</div>
+                    <div style={{fontSize: '20px', fontWeight:'bold', textTransform:'uppercase', color:'darkgoldenrod', fontFamily:'serif'}}>{sellerDetails["name"]}</div>
+                    <div>{sellerDetails["description"]}</div>
+                </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                     {homePageItemsData.map((item, index) => (
                         (item.seller === sellerDetails["name"]) && (
