@@ -85,17 +85,25 @@
   font-weight: bolder;
 }
 
-.product-id{
+.product-id {
   font-size: 14px;
   color: #666561;
 }
 
-.seller-details{
+.seller-details {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-top: 15px;
   text-align: left;
+}
+
+.share-product-icon {
+  position: absolute;
+  top: 22px;
+  right: 12px;
+  background-color: white;
+  border-radius: 13px;
 }
 
 @media (max-width: 1000px) {
@@ -228,7 +236,7 @@
     font-weight: bolder;
   }
 
-  .product-id{
+  .product-id {
     font-size: 12px;
   }
 }

@@ -1,13 +1,20 @@
 import { React, useState } from 'react';
 import { replaceSpaceWithHyphen } from '../Utils/BaseUtils';
 import '../css/CollectionDetails.css'
+import IosShareIcon from '@mui/icons-material/IosShare';
+import MenuItemComponent from '../Components/MenuItem';
 
 const CollectionDetails = ({ item }) => {
     const totalCollectionImages = item.collectionImages;
     const [currentDisplayImageUrl, setCurrentDisplayImageUrl] = useState(null);
+    const [shareMenuItemAnchorEl, setShareMenuItemAnchorEl] = useState(null);
 
     const handleImageClick = (imageUrl) => {
         setCurrentDisplayImageUrl(imageUrl);
+    };
+
+    const handleShareIconClick = (event) => {
+        setShareMenuItemAnchorEl(event.currentTarget);
     };
 
     const sellerProductsLink = "http://localhost:3000/" + replaceSpaceWithHyphen(item.seller);
@@ -26,7 +33,7 @@ const CollectionDetails = ({ item }) => {
                     ))}
                 </div>
 
-                <div className="collection-item-div2">
+                <div className="collection-item-div2" style={{ position: 'relative' }}>
                     <img
                         src={currentDisplayImageUrl === null ? item.displayImage : currentDisplayImageUrl}
                         alt="SelectedImage1"
@@ -37,6 +44,14 @@ const CollectionDetails = ({ item }) => {
                             objectFit: 'cover',
                             objectPosition: 'center',
                         }}
+                    />
+                    <div className='share-product-icon'>
+                        <IosShareIcon onClick={handleShareIconClick}/>
+                    </div>
+
+                    <MenuItemComponent
+                        shareMenuItemAnchorEl={shareMenuItemAnchorEl}
+                        setShareMenuItemAnchorEl={setShareMenuItemAnchorEl}
                     />
                 </div>
 
@@ -75,7 +90,7 @@ const CollectionDetails = ({ item }) => {
 
                     <div className='seller-details'>
                         <span >Seller: {item.seller}</span>
-                        <a href={sellerProductsLink} style={{fontSize: '13px', fontFamily: 'Verdana, sans-serif'}} target="_blank" rel="noopener noreferrer">View other products from this seller</a>
+                        <a href={sellerProductsLink} style={{ fontSize: '13px', fontFamily: 'Verdana, sans-serif' }} target="_blank" rel="noopener noreferrer">View other products from this seller</a>
                     </div>
 
                 </div>
