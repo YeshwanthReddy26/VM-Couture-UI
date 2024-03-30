@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { replaceSpaceWithHyphen } from '../Utils/BaseUtils';
 import '../css/SellerProducts.css'
 
-const SellerProducts = ({sellerName}) => {
+const SellerProducts = ({sellerDetails}) => {
+
     const navigate = useNavigate();
 
     const handleSellerProductsPageCollectionClick = (item) => {
-        navigate(replaceSpaceWithHyphen(item.text));
+        navigate("/" + replaceSpaceWithHyphen(item.text));
     };
 
     return (
@@ -17,7 +18,7 @@ const SellerProducts = ({sellerName}) => {
             <div style={{ width: '100%' }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                     {homePageItemsData.map((item, index) => (
-                        (item.seller === sellerName) && (
+                        (item.seller === sellerDetails["name"]) && (
                             <div className="seller-products-page-image-container" key={index}>
                                 <img
                                     className="seller-products-page-image"
