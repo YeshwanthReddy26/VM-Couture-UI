@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import { replaceSpaceWithHyphen } from '../Utils/BaseUtils';
 import '../css/CollectionDetails.css'
 import IosShareIcon from '@mui/icons-material/IosShare';
-import MenuItemComponent from '../Components/MenuItem';
+import ShareMenuItem from '../Components/ShareMenuItem';
 
 const CollectionDetails = ({ item }) => {
     const totalCollectionImages = item.collectionImages;
@@ -49,7 +49,7 @@ const CollectionDetails = ({ item }) => {
                         <IosShareIcon onClick={handleShareIconClick}/>
                     </div>
 
-                    <MenuItemComponent
+                    <ShareMenuItem
                         shareMenuItemAnchorEl={shareMenuItemAnchorEl}
                         setShareMenuItemAnchorEl={setShareMenuItemAnchorEl}
                     />

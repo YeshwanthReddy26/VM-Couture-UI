@@ -5,15 +5,13 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 
-function MenuItemComponent({shareMenuItemAnchorEl,setShareMenuItemAnchorEl}) {
+function ShareMenuItem({shareMenuItemAnchorEl,setShareMenuItemAnchorEl}) {
     const open = Boolean(shareMenuItemAnchorEl);
-   
     const handleClose = () => {
         setShareMenuItemAnchorEl(null);
     };
     
     return (
-        <React.Fragment>
             <Menu
                 anchorEl={shareMenuItemAnchorEl}
                 id="account-menu"
@@ -56,8 +54,7 @@ function MenuItemComponent({shareMenuItemAnchorEl,setShareMenuItemAnchorEl}) {
                     Copy Link
                 </MenuItem>
             </Menu>
-        </React.Fragment>
     );
 }
 
-export default MenuItemComponent;
+export default ShareMenuItem;
