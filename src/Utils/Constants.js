@@ -18,7 +18,7 @@ const homePageItemsData = [
     productId: 'PG-12',
     returnAvailableDays: 0,
     deliveryCharges: 0,
-    seller: 'VM-Couture',
+    seller: 'VM Couture',
   },
   {
     displayImage: sg100,
@@ -29,7 +29,7 @@ const homePageItemsData = [
     productId: 'VM-123',
     returnAvailableDays: 15,
     deliveryCharges: 50,
-    seller: 'VM-Couture',
+    seller: 'VM Couture',
   },
   {
     displayImage: pk100,
@@ -40,7 +40,7 @@ const homePageItemsData = [
     productId: 'VM-123',
     returnAvailableDays: 10,
     deliveryCharges: 200,
-    seller: 'VM-Couture',
+    seller: 'VM Couture',
   },
 ];
 
@@ -67,4 +67,15 @@ const customerReviews = [
   },
 ];
 
-export { homePageItemsData, customerReviews };
+const sellerDetails = [
+  {
+    name: 'VM Couture',
+    description: 'We at VM Couture exude unparalleled quality, evident in its fine craftsmanship and luxurious fabric. Each intricate detail reflects the commitment to excellence, ensuring a garment that epitomizes elegance and sophistication.',
+  },
+  {
+    name: 'Kalamandir',
+    description: 'We at Kalamandir ensure top-notch in quality, made with great care and using the finest materials. It looks stunning and feels amazing when worn, adding a touch of class to any event.',
+  },
+];
+
+export { homePageItemsData, customerReviews, sellerDetails };

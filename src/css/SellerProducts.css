@@ -16,6 +16,11 @@
     width: 100%;
     object-fit: cover;
     object-position: center;
+    padding: 15px;
+}
+
+.seller-products-page-description{
+    margin: 14px 0px 14px 0px;
 }
 
 @media (max-width: 1000px){
@@ -50,3 +55,8 @@
     }
 }
 
+@media (max-width: 450px){
+    .seller-products-page-image {
+        height: 450px;
+    }
+}

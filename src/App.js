@@ -7,7 +7,7 @@ import AboutUs from './Pages/AboutUs';
 import NotFound from './Pages/NotFound';
 import { Navigate } from 'react-router-dom';
 import QualityAssuranceFooter from './Components/QualityAssuranceFooter';
-import { homePageItemsData } from './Utils/Constants';
+import { homePageItemsData, sellerDetails } from './Utils/Constants';
 import CollectionDetails from './Pages/CollectionDetails';
 import { replaceSpaceWithHyphen } from './Utils/BaseUtils';
 import SellerProducts from './Pages/SellerProducts';
@@ -38,16 +38,19 @@ function App() {
                   path={`/${replaceSpaceWithHyphen(item.text)}`}
                   element={<CollectionDetails item={item} />}
                 />
-
-                <Route
-                  key={item.seller}
-                  exact
-                  path={`/${replaceSpaceWithHyphen(item.seller)}`}
-                  element={<SellerProducts sellerName={item.seller} />}
-                />
               </>
             ))}
 
+            {sellerDetails.map(item => (
+              <>
+                <Route
+                  key={item.name}
+                  exact
+                  path={`/${replaceSpaceWithHyphen(item.name)}`}
+                  element={<SellerProducts sellerDetails={item} />}
+                />
+              </>
+            ))}
 
             <Route path="*" element={<Navigate to="/notfound" replace />} />
           </Routes>
