@@ -3,11 +3,21 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-
+import { copyToClipboard } from '../Utils/BaseUtils';
+import { useLocation } from "react-router-dom";
 
 function ShareMenuItem({shareMenuItemAnchorEl,setShareMenuItemAnchorEl}) {
+    const location = useLocation();
+    const currentPath = location.pathname;
     const open = Boolean(shareMenuItemAnchorEl);
+
     const handleClose = () => {
+        setShareMenuItemAnchorEl(null);
+    };
+
+    const handleCopyLinkClick = () => {
+        const totalPath = "http://localhost:3000" + currentPath;
+        copyToClipboard(totalPath)
         setShareMenuItemAnchorEl(null);
     };
     
@@ -47,7 +57,7 @@ function ShareMenuItem({shareMenuItemAnchorEl,setShareMenuItemAnchorEl}) {
                 transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={handleCopyLinkClick}>
                     <ListItemIcon>
                         <ContentCopyIcon fontSize="small" />
                     </ListItemIcon>
