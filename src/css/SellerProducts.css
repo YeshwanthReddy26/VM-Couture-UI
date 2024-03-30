@@ -55,3 +55,8 @@
     }
 }
 
+@media (max-width: 450px){
+    .seller-products-page-image {
+        height: 450px;
+    }
+}
