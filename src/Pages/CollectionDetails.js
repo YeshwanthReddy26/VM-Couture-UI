@@ -19,6 +19,24 @@ const CollectionDetails = ({ item }) => {
 
     const sellerProductsLink = "http://localhost:3000/" + replaceSpaceWithHyphen(item.seller);
 
+    const zoom = (e) => {
+        const zoomer = e.currentTarget;
+        let offsetX, offsetY;
+
+        if (e.nativeEvent.offsetX !== undefined) {
+            offsetX = e.nativeEvent.offsetX;
+            offsetY = e.nativeEvent.offsetY;
+        } else {
+            offsetX = e.touches[0].pageX;
+            offsetY = e.touches[0].pageY;
+        }
+
+        const x = (offsetX / zoomer.offsetWidth) * 100;
+        const y = (offsetY / zoomer.offsetHeight) * 100;
+
+        zoomer.style.backgroundPosition = `${x}% ${y}%`;
+    };
+
     return (
         <>
             <div className="collection-item-page">
@@ -33,7 +51,13 @@ const CollectionDetails = ({ item }) => {
                     ))}
                 </div>
 
-                <div className="collection-item-div2" style={{ position: 'relative' }}>
+                <div
+                    className="collection-item-div2 zoom"
+                    onMouseMove={zoom}
+                    style={{
+                        backgroundImage: `url(${currentDisplayImageUrl === null ? item.displayImage : currentDisplayImageUrl})`
+                    }}
+                >
                     <img
                         src={currentDisplayImageUrl === null ? item.displayImage : currentDisplayImageUrl}
                         alt="SelectedImage1"
@@ -46,7 +70,7 @@ const CollectionDetails = ({ item }) => {
                         }}
                     />
                     <div className='share-product-icon'>
-                        <IosShareIcon onClick={handleShareIconClick}/>
+                        <IosShareIcon onClick={handleShareIconClick} />
                     </div>
 
                     <ShareMenuItem

@@ -110,6 +110,24 @@
   border-radius: 13px;
 }
 
+.zoom {
+  background-position: 50% 50%;
+  position: relative;
+  height: fit-content;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.zoom img:hover {
+  opacity: 0;
+}
+
+.zoom img {
+  transition: opacity 0.5s;
+  display: block;
+  width: 100%;
+}
+
 @media (max-width: 1000px) {
   .collection-item-div1 {
     order: 2;
