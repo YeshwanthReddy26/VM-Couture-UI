@@ -98,6 +98,10 @@
   text-align: left;
 }
 
+.share-product-icon :hover {
+  cursor: pointer;
+}
+
 .share-product-icon {
   position: absolute;
   top: 22px;
