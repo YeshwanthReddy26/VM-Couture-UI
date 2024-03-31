@@ -98,12 +98,34 @@
   text-align: left;
 }
 
+.share-product-icon :hover {
+  cursor: pointer;
+}
+
 .share-product-icon {
   position: absolute;
   top: 22px;
   right: 12px;
   background-color: white;
   border-radius: 13px;
+}
+
+.zoom {
+  background-position: 50% 50%;
+  position: relative;
+  height: fit-content;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.zoom img:hover {
+  opacity: 0;
+}
+
+.zoom img {
+  transition: opacity 0.5s;
+  display: block;
+  width: 100%;
 }
 
 @media (max-width: 1000px) {
