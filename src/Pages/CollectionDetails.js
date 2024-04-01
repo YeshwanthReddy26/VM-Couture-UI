@@ -136,8 +136,8 @@ const CollectionDetails = ({ item }) => {
                     </div>
 
                     <div className='seller-details'>
-                        <span >Seller: {item.seller}</span>
-                        <a href={sellerProductsLink} style={{ fontSize: '13px', fontFamily: 'Verdana, sans-serif' }} target="_blank" rel="noopener noreferrer">View other products from this seller</a>
+                        <span ><strong>Seller: </strong> {item.seller}</span>
+                        <a href={sellerProductsLink} style={{ fontSize: '13px', fontFamily: 'Verdana, sans-serif' }} >View other products from this seller</a>
                     </div>
 
                     <hr className='horizontal-line' />
