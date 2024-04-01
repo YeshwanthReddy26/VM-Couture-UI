@@ -179,6 +179,10 @@ const CollectionDetails = ({ item }) => {
                     </div>
 
                     <hr className='horizontal-line' />
+                    <div className="accordion-items--content">
+                        <p><strong>Please Note: </strong>Product color may slightly vary due to photographic lighting sources or your device settings.</p>
+                    </div>
+                    <hr className='horizontal-line' />
                 </div>
 
             </div>
