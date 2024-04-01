@@ -1,12 +1,29 @@
-/* mobile */
 .about-us-page-div {
-    /* Default margin */
-    margin: 20px;
+    margin: 60px 160px 30px 160px;
 }
 
-/* laptop */
-@media (min-width: 761px) {
+.about-us-description {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.about-us-heading {
+    font-weight: bold;
+    margin: 0px;
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 1000px) {
     .about-us-page-div {
-        margin: 60px 160px 30px 160px;
+        margin: 20px;
+    }
+
+    .about-us-description {
+        font-size: 16px;
+    }
+
+    .about-us-heading {
+        font-size: 24px;
     }
 }
