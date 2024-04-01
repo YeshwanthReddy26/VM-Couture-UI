@@ -14,6 +14,8 @@
   display: flex;
   flex-direction: column;
   padding: 20px 50px 0px 20px;
+  height: 900px;
+  overflow: auto;
 }
 
 .collection-item-images:hover {
@@ -129,7 +131,6 @@
 
 .horizontal-line {
   background-color: black;
-  border: none;
   display: block;
   height: 1px;
   width: 100%;
@@ -178,6 +179,7 @@
     width: 100%;
     order: 3;
     padding-right: 10px;
+    height: auto;
   }
 
   .collection-item-page {
@@ -202,6 +204,7 @@
 
   .collection-item-div3 {
     padding: 10px 3px 0px 7px;
+    height: auto;
   }
 
   .collection-item-name {
