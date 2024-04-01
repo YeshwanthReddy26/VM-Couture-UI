@@ -13,8 +13,9 @@
   width: 40%;
   display: flex;
   flex-direction: column;
-  padding-left: 20px;
-  padding-top: 20px;
+  padding: 20px 50px 0px 20px;
+  height: 900px;
+  overflow: auto;
 }
 
 .collection-item-images:hover {
@@ -94,7 +95,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 15px;
+  margin: 15px 0px;
   text-align: left;
 }
 
@@ -128,6 +129,30 @@
   width: 100%;
 }
 
+.horizontal-line {
+  background-color: black;
+  display: block;
+  height: 1px;
+  width: 100%;
+}
+
+.accordion-item--heading {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.accordion-items--content p {
+  font-size: 14px;
+  text-align: left;
+}
+
+.accordion-items--content {
+  padding: 0px 15px;
+}
+
 @media (max-width: 1000px) {
   .collection-item-div1 {
     order: 2;
@@ -153,6 +178,8 @@
   .collection-item-div3 {
     width: 100%;
     order: 3;
+    padding-right: 10px;
+    height: auto;
   }
 
   .collection-item-page {
@@ -176,8 +203,8 @@
   }
 
   .collection-item-div3 {
-    padding-left: 7px;
-    padding-top: 10px;
+    padding: 10px 3px 0px 7px;
+    height: auto;
   }
 
   .collection-item-name {
