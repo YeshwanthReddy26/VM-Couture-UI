@@ -44,13 +44,19 @@ const CollectionDetails = ({ item }) => {
 
     const expandShippingPolicy = () => {
         setShippingPolicyExpanded(!shippingPolicyExpanded);
+        setReturnPolicyExpanded(false);
+        setCancellationPolicyExpanded(false);
     };
 
     const expandReturnAndRefundPolicy = () => {
+        setShippingPolicyExpanded(false);
         setReturnPolicyExpanded(!returnPolicyExpanded);
+        setCancellationPolicyExpanded(false);
     };
 
     const expandCancellationPolicy = () => {
+        setShippingPolicyExpanded(false);
+        setReturnPolicyExpanded(false);
         setCancellationPolicyExpanded(!cancellationPolicyExpanded);
     };
 
