@@ -2,7 +2,6 @@ import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
@@ -21,7 +20,6 @@ import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import { ListItemIcon } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const drawerWidth = 240;
 const navItems = [
     {
         text: "Home",
@@ -41,7 +39,6 @@ const navItems = [
 ];
 
 function DrawerAppBar(props) {
-
     const location = useLocation();
     const currentPath = location.pathname;
 
@@ -61,13 +58,10 @@ function DrawerAppBar(props) {
     }
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", backgroundColor: "black", color: "white" }}>
+        <div onClick={handleDrawerToggle} style={{ textAlign: 'center', backgroundColor: 'black', color: 'white' }}>
             <Typography variant="h6" sx={{ my: '12px', color: "white" }}>
                 CompanyName
             </Typography>
-            <Divider
-                style={{ backgroundColor: 'white' }}
-            />
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item.text} disablePadding>
@@ -80,14 +74,14 @@ function DrawerAppBar(props) {
                     </ListItem>
                 ))}
             </List>
-        </Box>
+        </div>
     );
 
     const container =
         window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: "flex" }}>
+        <div sx={{ display: "flex", backgroundColor: 'black' }}>
             <CssBaseline />
             {/* This will come into picture if the screen size is small or large */}
             <AppBar component="nav">
@@ -144,14 +138,15 @@ function DrawerAppBar(props) {
                         display: { xs: "block", sm: "none" },
                         "& .MuiDrawer-paper": {
                             boxSizing: "border-box",
-                            width: drawerWidth,
+                            width: 190,
+                            backgroundColor: "black",
                         },
                     }}
                 >
                     {drawer}
                 </Drawer>
             </nav>
-        </Box>
+        </div>
     );
 }
 
