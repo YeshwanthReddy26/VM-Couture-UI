@@ -5,6 +5,7 @@ import DrawerAppBar from './Components/DrawerAppBar';
 import ContactUs from './Pages/ContactUs';
 import AboutUs from './Pages/AboutUs';
 import NotFound from './Pages/NotFound';
+import NewPicks from './Pages/NewPicks';
 import { Navigate } from 'react-router-dom';
 import QualityAssuranceFooter from './Components/QualityAssuranceFooter';
 import { homePageItemsData, sellerDetails } from './Utils/Constants';
@@ -26,6 +27,8 @@ function App() {
             <Route exact path="/contact-us" element={<ContactUs />} />
 
             <Route exact path="/about-us" element={<AboutUs />} />
+
+            <Route exact path="/new-picks" element={<NewPicks />} />
 
             <Route exact path="/notfound" element={<NotFound />} />
 

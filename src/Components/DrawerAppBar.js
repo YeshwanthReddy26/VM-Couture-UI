@@ -17,6 +17,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+import CollectionsIcon from '@mui/icons-material/Collections';
 import { ListItemIcon } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -25,6 +26,11 @@ const navItems = [
         text: "Home",
         icon: <HomeIcon />,
         path: "/",
+    },
+    {
+        text: "New Picks",
+        icon: <CollectionsIcon />,
+        path: "/new-picks",
     },
     {
         text: "About Us",
