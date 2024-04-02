@@ -75,7 +75,7 @@ function DrawerAppBar(props) {
                             <ListItemIcon sx={{ color: "white" }}>
                                 {item.icon}
                             </ListItemIcon>
-                            <ListItemText primary={item.text} />
+                            <ListItemText sx={{ textAlign: 'start' }} primary={item.text} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -105,7 +105,6 @@ function DrawerAppBar(props) {
                         :
                         <>
                             <Typography
-                                // variant="h6"
                                 component="div"
                                 sx={{ flex: 1, display: 'flex', alignItems: 'center', paddingLeft: '30px' }}
                             >

@@ -57,7 +57,77 @@
     cursor: pointer;
 }
 
-@media (max-width: 1000px) {
+.applied-filter {
+    margin: 0 5px 5px 0;
+    display: inline-block;
+    background-color: #dedede;
+    border-radius: 6px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.filters-div {
+    width: 30%;
+    margin-top: 50px;
+    padding-left: 70px;
+}
+
+.newpicks-horizontal-line {
+    background-color: black;
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin-left: 15px;
+    margin-right: 0px;
+}
+
+.sortby-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    border: 1px solid grey;
+    border-radius: 6px;
+    margin-right: 10px;
+    padding-left: 18px;
+}
+
+
+.filter-button {
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 6px;
+    margin-right: 10px;
+    padding-left: 18px;
+    display: none;
+}
+
+@media (max-width: 1725px) {
+    .newpicks-page-image-container {
+        width: 33%;
+    }
+
+    .newpicks-page-image {
+        height: 500px;
+    }
+
+    .newpicks-all-colors-filter {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .filters-div {
+        padding-left: 30px;
+    }
+}
+
+@media (max-width: 1500px) {
+    .newpicks-page-image {
+        height: 400px;
+    }
+}
+
+@media (max-width: 1100px) {
     .newpicks-page-image-container {
         position: relative;
         display: inline-block;
@@ -71,6 +141,30 @@
         width: 100%;
         object-fit: cover;
         object-position: center;
+    }
+
+    .filters-div {
+        display: none;
+    }
+
+    .total-products-info {
+        display: none;
+    }
+
+    .sortby-button {
+        width: 100%;
+    }
+
+    .filter-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .newpicks-all-colors-filter {
+        grid-template-columns: repeat(2, 1fr);
+        margin-right: 3px;
     }
 }
 
