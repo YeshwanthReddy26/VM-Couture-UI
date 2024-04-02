@@ -17,6 +17,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+import CollectionsIcon from '@mui/icons-material/Collections';
 import { ListItemIcon } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -25,6 +26,11 @@ const navItems = [
         text: "Home",
         icon: <HomeIcon />,
         path: "/",
+    },
+    {
+        text: "New Picks",
+        icon: <CollectionsIcon />,
+        path: "/new-picks",
     },
     {
         text: "About Us",
@@ -69,7 +75,7 @@ function DrawerAppBar(props) {
                             <ListItemIcon sx={{ color: "white" }}>
                                 {item.icon}
                             </ListItemIcon>
-                            <ListItemText primary={item.text} />
+                            <ListItemText sx={{ textAlign: 'start' }} primary={item.text} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -99,7 +105,6 @@ function DrawerAppBar(props) {
                         :
                         <>
                             <Typography
-                                // variant="h6"
                                 component="div"
                                 sx={{ flex: 1, display: 'flex', alignItems: 'center', paddingLeft: '30px' }}
                             >
