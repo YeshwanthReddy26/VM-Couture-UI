@@ -103,8 +103,8 @@ const NewPicks = () => {
           <h4 style={{ textAlign: 'start' }}>Color</h4>
           <ul className="newpicks-all-colors-filter">
             <li className='newpicks-color-filter'>
-              <span className='newpicks-color-circle' style={{ backgroundColor: 'pink' }}></span>
-              <label className='newpicks-color-label'>Pink <span>(14)</span></label>
+              <span className='newpicks-color-circle' style={{ backgroundColor: '#C8A2C8' }}></span>
+              <label className='newpicks-color-label'>Lilac <span>(1)</span></label>
             </li>
             <li className='newpicks-color-filter'>
               <span className='newpicks-color-circle' style={{ backgroundColor: 'peachpuff' }}></span>

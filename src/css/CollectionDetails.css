@@ -130,7 +130,8 @@
 }
 
 .horizontal-line {
-  background-color: black;
+  background-color: rgb(239, 199, 190);
+  border: none;
   display: block;
   height: 1px;
   width: 100%;
@@ -152,6 +153,60 @@
 .accordion-items--content {
   padding: 0px 15px;
 }
+
+.product-quantity {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.product-quantity-label,
+.product-quantity-value {
+  box-sizing: border-box;
+  color: #333;
+  font: 500 16px Cardo, serif;
+  height: 44px;
+  line-height: 44px;
+  margin: 0 15px 5px 0;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.product-quantity-value {
+  display: flex;
+  flex-direction: row;
+  font-weight: 400;
+  line-height: 25.6px;
+}
+
+.quantity-control {
+  border: 1px solid rgb(239, 199, 190);
+  font: 400 20px/42px Cardo, serif;
+  text-align: center;
+  width: 38px;
+  cursor: pointer;
+}
+
+.quantity-control-down {
+  border-right-width: 0px;
+  border-right-style: none;
+}
+
+.quantity-control-up {
+  border-left-width: 0px;
+  border-left-style: none;
+}
+
+.product-quantity-display {
+  border: 1px solid rgb(239, 199, 190);
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: text;
+  font: 700 16px Cardo, serif;
+  text-align: center;
+  width: 70px;
+}
+
 
 @media (max-width: 1000px) {
   .collection-item-div1 {
