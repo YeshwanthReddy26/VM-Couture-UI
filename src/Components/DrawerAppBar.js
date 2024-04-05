@@ -20,6 +20,13 @@ import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import CollectionsIcon from '@mui/icons-material/Collections';
 import { ListItemIcon } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import CloseIcon from '@mui/icons-material/Close';
+import '../css/DrawerAppBar.css'
+import { userDetails } from '../Utils/Constants';
+import { replaceSpaceWithHyphen } from "../Utils/BaseUtils";
+
 
 const navItems = [
     {
@@ -50,6 +57,7 @@ function DrawerAppBar(props) {
 
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [openCartDrawer, setOpenCartDrawer] = React.useState(false);
     const theme = useTheme();
     const isExtraSmall = !useMediaQuery(theme.breakpoints.up('sm'));
 
@@ -62,6 +70,15 @@ function DrawerAppBar(props) {
     const handleNavbarButtonClick = (path) => {
         navigate(path);
     }
+
+    const closeCartDrawer = () => {
+        setOpenCartDrawer(false);
+    }
+
+    const handleCartItemImageClick = (name) => {
+        navigate("/" + replaceSpaceWithHyphen(name));
+        setOpenCartDrawer(false);
+    };
 
     const drawer = (
         <div onClick={handleDrawerToggle} style={{ textAlign: 'center', backgroundColor: 'black', color: 'white' }}>
@@ -86,47 +103,113 @@ function DrawerAppBar(props) {
     const container =
         window !== undefined ? () => window().document.body : undefined;
 
+    let cartDetails = userDetails["cartProducts"];
+    console.log(cartDetails[0].imageUrl);
+
     return (
         <div sx={{ display: "flex", backgroundColor: 'black' }}>
             <CssBaseline />
             {/* This will come into picture if the screen size is small or large */}
             <AppBar component="nav">
-                <Toolbar sx={{ backgroundColor: "black", display: 'flex' }}>
-                    {isExtraSmall ?
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            edge="start"
-                            onClick={handleDrawerToggle}
-                            sx={{ mr: 2 }}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        :
-                        <>
-                            <Typography
-                                component="div"
-                                sx={{ flex: 1, display: 'flex', alignItems: 'center', paddingLeft: '30px' }}
+                <Toolbar sx={{ backgroundColor: "black", display: 'flex', justifyContent: 'space-between' }}>
+                    <>
+                        {isExtraSmall ?
+                            <IconButton
+                                color="inherit"
+                                aria-label="open drawer"
+                                edge="start"
+                                onClick={handleDrawerToggle}
+                                sx={{ mr: 2 }}
                             >
-                                CompanyName
-                            </Typography>
-                            <Box sx={{ display: 'flex' }}>
-                                {navItems.map((item) => (
-                                    <Button onClick={() => handleNavbarButtonClick(item.path)}
-                                        key={item.text}
-                                        sx={{
-                                            backgroundColor: 'black',
-                                            color: currentPath === item.path ? '#ff8921' : 'white',
-                                            paddingRight: "36px",
-                                            fontSize: "13px"
-                                        }}
-                                        startIcon={item.icon}>
-                                        {item.text}
-                                    </Button>
+                                <MenuIcon />
+                            </IconButton>
+                            :
+                            <>
+                                <Typography
+                                    component="div"
+                                    sx={{ flex: 1, display: 'flex', alignItems: 'center', paddingLeft: '30px' }}
+                                >
+                                    CompanyName
+                                </Typography>
+                                <Box sx={{ display: 'flex' }}>
+                                    {navItems.map((item) => (
+                                        <Button onClick={() => handleNavbarButtonClick(item.path)}
+                                            key={item.text}
+                                            sx={{
+                                                backgroundColor: 'black',
+                                                color: currentPath === item.path ? '#ff8921' : 'white',
+                                                paddingRight: "36px",
+                                                fontSize: "13px"
+                                            }}
+                                            startIcon={item.icon}>
+                                            {item.text}
+                                        </Button>
+                                    ))}
+                                </Box>
+                            </>
+                        }
+                        <Button
+                            sx={{
+                                backgroundColor: 'black',
+                                color: 'white',
+                                paddingRight: "36px",
+                                fontSize: "13px",
+                                display: 'flex',
+                                padding: '0px'
+                            }}
+                            startIcon={<ShoppingCartIcon />}
+                            onClick={() => setOpenCartDrawer(true)}
+                        >
+                            {cartDetails.length}
+                        </Button>
+
+                        {/* cart drawer */}
+                        <Drawer
+                            anchor={'right'}
+                            open={openCartDrawer}
+                            onClose={closeCartDrawer}
+                        >
+                            <div style={{ width: '400px' }}>
+                                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-13px' }}>
+                                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                        <ShoppingBagIcon sx={{ fontSize: '40px' }} />
+                                        <h2>Your Cart</h2>
+                                    </div>
+                                    <div>
+                                        <CloseIcon className="cart-close-icon" onClick={closeCartDrawer} />
+                                    </div>
+                                </div>
+                                <hr className='horizontal-line' style={{ width: '95%' }} />
+
+                                {cartDetails.map((item, index) => (
+                                    <div className="cart-item" key={index}>
+                                        <div>
+                                            <img
+                                                src={item.imageUrl}
+                                                alt="SelectedImage"
+                                                className="cart-item-image"
+                                                onClick={() => handleCartItemImageClick(item.name)}
+                                            />
+                                        </div>
+                                        <div>
+                                            <p className="cart-item-name">{item.name}</p>
+                                            <p className="cart-item-price">{item.price}</p>
+                                            <div className="product-quantity-value">
+                                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                                <a className="quantity-control-down quantity-control">-</a>
+                                                <input value={item.quantity} className="product-quantity-display" />
+                                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                                <a className="quantity-control-up quantity-control">+</a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <CloseIcon className="cart-item-close" />
+                                        </div>
+                                    </div>
                                 ))}
-                            </Box>
-                        </>
-                    }
+                            </div>
+                        </Drawer>
+                    </>
                 </Toolbar>
             </AppBar>
             {/* This will come into picture if the screen size is extra small */}

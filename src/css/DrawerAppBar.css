@@ -1,0 +1,25 @@
+.cart-close-icon{
+    font-size: 30px;
+}
+
+.cart-close-icon:hover{
+    cursor: pointer;
+    font-size: 32px;
+}
+
+.cart-item-image{
+    height: 105px;
+    width: 70px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.cart-item-close{
+    cursor: pointer;
+}
+
+.cart-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

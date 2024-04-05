@@ -13,7 +13,7 @@ const CollectionDetails = ({ item }) => {
     const [shippingPolicyExpanded, setShippingPolicyExpanded] = useState(false);
     const [returnPolicyExpanded, setReturnPolicyExpanded] = useState(false);
     const [cancellationPolicyExpanded, setCancellationPolicyExpanded] = useState(false);
-    const [totalProductQuality, setTotalProductQuality] = useState(0);
+    const [totalProductQuality, setTotalProductQuality] = useState(1);
 
     const handleImageClick = (imageUrl) => {
         setCurrentDisplayImageUrl(imageUrl);
@@ -63,12 +63,12 @@ const CollectionDetails = ({ item }) => {
 
     const handleQuantityButtonClick = (e) => {
         const operation = e.target.text;
-        if(operation === '-'){
-            if(totalProductQuality > 0){
+        if (operation === '-') {
+            if (totalProductQuality > 0) {
                 setTotalProductQuality(totalProductQuality - 1);
             }
-        }else if(operation === '+'){
-            if(totalProductQuality < 10){
+        } else if (operation === '+') {
+            if (totalProductQuality < 10) {
                 setTotalProductQuality(totalProductQuality + 1);
             }
         }
@@ -161,10 +161,16 @@ const CollectionDetails = ({ item }) => {
                             <label className='product-quantity-label'>Quantity</label>
                         </div>
                         <div className='product-quantity-value'>
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a onClick={handleQuantityButtonClick} class="quantity-control-down quantity-control">-</a>
-                            <input value={totalProductQuality} class="product-quantity-display"/>
+                            <input value={totalProductQuality} class="product-quantity-display" />
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a onClick={handleQuantityButtonClick} class="quantity-control-up quantity-control">+</a>
                         </div>
+                    </div>
+
+                    <div className='product-add-buttons'>
+                        <input type="submit" name="button" id="product-add-to-cart" value="ADD TO CART" wk-skip="" />
                     </div>
 
                     <hr className='horizontal-line' />
