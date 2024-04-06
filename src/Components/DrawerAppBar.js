@@ -168,6 +168,7 @@ function DrawerAppBar(props) {
                             anchor={'right'}
                             open={openCartDrawer}
                             onClose={closeCartDrawer}
+                            sx={{ fontFamily: 'Cardo serif' }}
                         >
                             <div style={{ width: '400px' }}>
                                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-13px' }}>
@@ -181,32 +182,50 @@ function DrawerAppBar(props) {
                                 </div>
                                 <hr className='horizontal-line' style={{ width: '95%' }} />
 
-                                {cartDetails.map((item, index) => (
-                                    <div className="cart-item" key={index}>
-                                        <div>
-                                            <img
-                                                src={item.imageUrl}
-                                                alt="SelectedImage"
-                                                className="cart-item-image"
-                                                onClick={() => handleCartItemImageClick(item.name)}
-                                            />
-                                        </div>
-                                        <div>
-                                            <p className="cart-item-name">{item.name}</p>
-                                            <p className="cart-item-price">{item.price}</p>
-                                            <div className="product-quantity-value">
-                                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                                <a className="quantity-control-down quantity-control">-</a>
-                                                <input value={item.quantity} className="product-quantity-display" />
-                                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                                <a className="quantity-control-up quantity-control">+</a>
+                                <div className="total-cart-details">
+                                    <div>
+                                        {cartDetails.map((item, index) => (
+                                            <div className="cart-item" key={index}>
+                                                <div>
+                                                    <img
+                                                        src={item.imageUrl}
+                                                        alt="SelectedImage"
+                                                        className="cart-item-image"
+                                                        onClick={() => handleCartItemImageClick(item.name)}
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <p onClick={() => handleCartItemImageClick(item.name)} className="cart-item-name">{item.name}</p>
+                                                    <p className="cart-item-price">₹ {item.price}</p>
+                                                    <div className="product-quantity-value">
+                                                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                                        <a className="quantity-control-down quantity-control">-</a>
+                                                        <input value={item.quantity} className="product-quantity-display" />
+                                                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                                        <a className="quantity-control-up quantity-control">+</a>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <CloseIcon className="cart-item-close" />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div>
-                                            <CloseIcon className="cart-item-close" />
-                                        </div>
+                                        ))}
                                     </div>
-                                ))}
+
+                                    <div>
+                                        <hr className='horizontal-line' style={{ width: '95%' }} />
+                                        <div className="total-cart-value">
+                                            <p>Total</p>
+                                            <p>₹ 200000</p>
+                                        </div>
+
+                                        <div className='cart-checkout-button'>
+                                            <input type="submit" name="button" id="checkout-button" value="CHECKOUT" wk-skip="" />
+                                        </div>
+
+                                        <p style={{ fontSize: '12px', textAlign: 'center' }}>Shipping, taxes, and discount codes calculated at checkout.</p>
+                                    </div>
+                                </div>
                             </div>
                         </Drawer>
                     </>
