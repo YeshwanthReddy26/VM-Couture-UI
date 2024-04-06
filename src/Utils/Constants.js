@@ -26,7 +26,7 @@ const homePageItemsData = [
     title: 'image',
     text: 'Aqua Blue Mashru Silk Silver Zari Brocade Weaved Banarasi Saree',
     price: '₹ 14,999',
-    productId: 'PG-12',
+    productId: '123',
     returnAvailableDays: 0,
     deliveryCharges: 0,
     seller: 'VM Couture',
@@ -37,7 +37,7 @@ const homePageItemsData = [
     title: 'image',
     text: 'Sea Green Colored, Pure Handwoven Banaras Silk Saree',
     price: '₹ 9,999',
-    productId: 'VM-123',
+    productId: '234',
     returnAvailableDays: 15,
     deliveryCharges: 50,
     seller: 'Kalamandir',
@@ -48,7 +48,7 @@ const homePageItemsData = [
     title: 'image',
     text: 'Lilac Mashru Silk Silver Zari Brocade Weaved Banarasi Saree',
     price: '₹ 14,999',
-    productId: 'VM-123',
+    productId: '345',
     returnAvailableDays: 10,
     deliveryCharges: 200,
     seller: 'VM Couture',
@@ -111,4 +111,52 @@ const sellerDetails = [
   },
 ];
 
-export { homePageItemsData, customerReviews, sellerDetails };
+const userDetails = {
+  "id": "1234",
+  "email": "buntyyeshwanth123@gmail.com",
+  "mobileNumber": "8688026814",
+  "password": "8688026814",
+  "address": [
+    {
+      "locality": "SAS Towers",
+      "street": "Hastinapuram",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "pincode": "500079",
+      "country": "India"
+    },
+    {
+      "locality": "Lavanya residency",
+      "street": "Sai ram nagar colony",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "pincode": "500060",
+      "country": "India"
+    }
+  ],
+  "cartProducts": [
+    {
+      "id": "123",
+      "name": "Aqua Blue Mashru Silk Silver Zari Brocade Weaved Banarasi Saree",
+      "quantity": "2",
+      "imageUrl": pg120,
+      "price": "14999"
+    },
+    {
+      "id": "234",
+      "name": "Sea Green Colored, Pure Handwoven Banaras Silk Saree",
+      "quantity": "2",
+      "imageUrl": sg100,
+      "price": "9999"
+    },
+    {
+      "id": "345",
+      "name": "Lilac Mashru Silk Silver Zari Brocade Weaved Banarasi Saree",
+      "quantity": "1",
+      "imageUrl": pk100,
+      "price": "14999"
+    }
+  ]
+}
+
+export { homePageItemsData, customerReviews, sellerDetails, userDetails };
