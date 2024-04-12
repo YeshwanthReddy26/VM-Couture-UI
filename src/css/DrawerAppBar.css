@@ -64,3 +64,13 @@
     height: 54px;
     width: 95%;
 }
+
+.cart-drawer-div {
+    width: 400px;
+}
+
+@media (max-width: 450px) {
+    .cart-drawer-div {
+        width: 330px;
+    }
+}

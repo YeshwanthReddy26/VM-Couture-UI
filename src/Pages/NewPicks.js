@@ -26,7 +26,7 @@ const NewPicks = () => {
   }
 
   const handleNewPicksPageCollectionClick = (item) => {
-    navigate("/" + replaceSpaceWithHyphen(item.text));
+    navigate(replaceSpaceWithHyphen(item.text));
   };
 
   const handlePriceRangeChange = (event, newValue, activeThumb) => {

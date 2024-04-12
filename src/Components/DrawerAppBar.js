@@ -76,7 +76,7 @@ function DrawerAppBar(props) {
     }
 
     const handleCartItemImageClick = (name) => {
-        navigate("/" + replaceSpaceWithHyphen(name));
+        navigate(replaceSpaceWithHyphen(name));
         setOpenCartDrawer(false);
     };
 
@@ -104,7 +104,6 @@ function DrawerAppBar(props) {
         window !== undefined ? () => window().document.body : undefined;
 
     let cartDetails = userDetails["cartProducts"];
-    console.log(cartDetails[0].imageUrl);
 
     return (
         <div sx={{ display: "flex", backgroundColor: 'black' }}>
@@ -170,7 +169,7 @@ function DrawerAppBar(props) {
                             onClose={closeCartDrawer}
                             sx={{ fontFamily: 'Cardo serif' }}
                         >
-                            <div style={{ width: '400px' }}>
+                            <div className="cart-drawer-div">
                                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-13px' }}>
                                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                                         <ShoppingBagIcon sx={{ fontSize: '40px' }} />
