@@ -23,7 +23,7 @@ const CollectionDetails = ({ item }) => {
         setShareMenuItemAnchorEl(event.currentTarget);
     };
 
-    const sellerProductsLink = "http://localhost:3000/" + replaceSpaceWithHyphen(item.seller);
+    const sellerProductsLink = process.env.REACT_APP_REDIRECT_URL + replaceSpaceWithHyphen(item.seller);
 
     const zoom = (e) => {
         const zoomer = e.currentTarget;
@@ -64,11 +64,11 @@ const CollectionDetails = ({ item }) => {
     const handleQuantityButtonClick = (e) => {
         const operation = e.target.text;
         if (operation === '-') {
-            if (totalProductQuality > 0) {
+            if (totalProductQuality > process.env.REACT_APP_CART_QUANTITY_MIN) {
                 setTotalProductQuality(totalProductQuality - 1);
             }
         } else if (operation === '+') {
-            if (totalProductQuality < 10) {
+            if (totalProductQuality < process.env.REACT_APP_CART_QUANTITY_MAX) {
                 setTotalProductQuality(totalProductQuality + 1);
             }
         }
