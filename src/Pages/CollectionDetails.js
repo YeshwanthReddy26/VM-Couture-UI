@@ -23,8 +23,7 @@ const CollectionDetails = ({ item }) => {
         setShareMenuItemAnchorEl(event.currentTarget);
     };
 
-    const redirectUrl = process.env.REACT_APP_REDIRECT_URL;
-    const sellerProductsLink = redirectUrl + replaceSpaceWithHyphen(item.seller);
+    const sellerProductsLink = process.env.REACT_APP_REDIRECT_URL + replaceSpaceWithHyphen(item.seller);
 
     const zoom = (e) => {
         const zoomer = e.currentTarget;
