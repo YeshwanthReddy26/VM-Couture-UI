@@ -138,14 +138,14 @@ const userDetails = {
     {
       "id": "123",
       "name": "Aqua Blue Mashru Silk Silver Zari Brocade Weaved Banarasi Saree",
-      "quantity": "2",
+      "quantity": "1",
       "imageUrl": pg120,
       "price": "14999"
     },
     {
       "id": "234",
       "name": "Sea Green Colored, Pure Handwoven Banaras Silk Saree",
-      "quantity": "2",
+      "quantity": "1",
       "imageUrl": sg100,
       "price": "9999"
     },
