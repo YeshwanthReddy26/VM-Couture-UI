@@ -26,7 +26,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import '../css/DrawerAppBar.css'
 import { replaceSpaceWithHyphen } from "../Utils/BaseUtils";
 
-import getUserCartDetails from "../Api/CartApis";
+import { getUserCartDetails, removeOrAddProductInCart } from '../Api/CartApis';
 
 const userId = "Yeshwanth";
 
@@ -83,16 +83,24 @@ function DrawerAppBar(props) {
     const openCartDrawer = async () => {
         setIsCartDrawerOpen(true);
 
-        const response = await getUserCartDetails({userId});
-        setCartDetails(response.data);
+        const response = await getUserCartDetails({ userId });
 
-        const totalValue = response.data.reduce((acc, item) => acc + parseInt(item.price), 0);
+        setCartDetails(response.data);
+        const totalValue = response.data.reduce((acc, item) => acc + parseInt(item.price) * item.quantity, 0);
         setTotalCartValue(totalValue);
     }
 
     const handleCartItemImageClick = (name) => {
         navigate(replaceSpaceWithHyphen(name));
         setIsCartDrawerOpen(false);
+    };
+
+    const handleCartItemQuantityChange = async (productId, quantity) => {
+        const response = await removeOrAddProductInCart({ userId, productId, quantity });
+
+        setCartDetails(response.data);
+        const totalValue = response.data.reduce((acc, item) => acc + parseInt(item.price) * item.quantity, 0);
+        setTotalCartValue(totalValue);
     };
 
     const drawer = (
@@ -211,14 +219,14 @@ function DrawerAppBar(props) {
                                                     <p className="cart-item-price">₹ {item.price}</p>
                                                     <div className="product-quantity-value">
                                                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                                        <a className="quantity-control-down quantity-control">-</a>
+                                                        <a onClick={() => handleCartItemQuantityChange(item.productId, item.quantity - 1)} className="quantity-control-down quantity-control">-</a>
                                                         <input value={item.quantity} className="product-quantity-display" />
                                                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                                        <a className="quantity-control-up quantity-control">+</a>
+                                                        <a onClick={() => handleCartItemQuantityChange(item.productId, item.quantity + 1)} className="quantity-control-up quantity-control">+</a>
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <CloseIcon className="cart-item-close" />
+                                                    <CloseIcon onClick={() => handleCartItemQuantityChange(item.productId, 0)} className="cart-item-close" />
                                                 </div>
                                             </div>
                                         ))}
