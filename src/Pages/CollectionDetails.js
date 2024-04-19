@@ -5,6 +5,9 @@ import IosShareIcon from '@mui/icons-material/IosShare';
 import ShareMenuItem from '../Components/ShareMenuItem';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import { removeOrAddProductInCart } from '../Api/CartApis';
+
+const userId = "Yeshwanth";
 
 const CollectionDetails = ({ item }) => {
     const totalCollectionImages = item.collectionImages;
@@ -13,7 +16,11 @@ const CollectionDetails = ({ item }) => {
     const [shippingPolicyExpanded, setShippingPolicyExpanded] = useState(false);
     const [returnPolicyExpanded, setReturnPolicyExpanded] = useState(false);
     const [cancellationPolicyExpanded, setCancellationPolicyExpanded] = useState(false);
-    const [totalProductQuality, setTotalProductQuality] = useState(1);
+    const [totalProductQuantity, setTotalProductQuantity] = useState(1);
+
+    const [addToCartLoading, setAddToCartLoading] = useState(false);
+    const [displayAddedToCart, setDisplayAddedToCart] = useState(false);
+
 
     const handleImageClick = (imageUrl) => {
         setCurrentDisplayImageUrl(imageUrl);
@@ -64,14 +71,26 @@ const CollectionDetails = ({ item }) => {
     const handleQuantityButtonClick = (e) => {
         const operation = e.target.text;
         if (operation === '-') {
-            if (totalProductQuality > process.env.REACT_APP_CART_QUANTITY_MIN) {
-                setTotalProductQuality(totalProductQuality - 1);
+            if (totalProductQuantity > process.env.REACT_APP_CART_QUANTITY_MIN) {
+                setTotalProductQuantity(totalProductQuantity - 1);
             }
         } else if (operation === '+') {
-            if (totalProductQuality < process.env.REACT_APP_CART_QUANTITY_MAX) {
-                setTotalProductQuality(totalProductQuality + 1);
+            if (totalProductQuantity < process.env.REACT_APP_CART_QUANTITY_MAX) {
+                setTotalProductQuantity(totalProductQuantity + 1);
             }
         }
+    };
+
+    const handleAddToCartButton = async (productId) => {
+        const quantity = totalProductQuantity;
+        setAddToCartLoading(true);
+        const response = await removeOrAddProductInCart({ userId, productId, quantity });
+        setAddToCartLoading(false);
+        setDisplayAddedToCart(true);
+        setTimeout(() => {
+            setDisplayAddedToCart(false);
+        }, 3000); // 3000 milliseconds = 3 seconds
+        console.log(response.data);
     };
 
     return (
@@ -163,14 +182,20 @@ const CollectionDetails = ({ item }) => {
                         <div className='product-quantity-value'>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a onClick={handleQuantityButtonClick} class="quantity-control-down quantity-control">-</a>
-                            <input value={totalProductQuality} class="product-quantity-display" />
+                            <input value={totalProductQuantity} class="product-quantity-display" />
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                             <a onClick={handleQuantityButtonClick} class="quantity-control-up quantity-control">+</a>
                         </div>
                     </div>
 
                     <div className='product-add-buttons'>
-                        <input type="submit" name="button" id="product-add-to-cart" value="ADD TO CART" wk-skip="" />
+                        <input
+                            onClick={() => handleAddToCartButton(item.productId)}
+                            type="submit"
+                            name="button"
+                            id="product-add-to-cart"
+                            value={addToCartLoading ? "ADDING TO CART..." : (displayAddedToCart ? "ADDED TO CART" : "ADD TO CART")}
+                        />
                     </div>
 
                     <hr className='horizontal-line' />

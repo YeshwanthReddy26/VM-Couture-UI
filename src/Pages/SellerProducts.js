@@ -10,7 +10,7 @@ const SellerProducts = ({sellerDetails}) => {
     const navigate = useNavigate();
 
     const handleSellerProductsPageCollectionClick = (item) => {
-        navigate("/" + replaceSpaceWithHyphen(item.text));
+        navigate(replaceSpaceWithHyphen(item.text));
     };
 
     return (

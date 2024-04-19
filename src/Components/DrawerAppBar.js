@@ -24,9 +24,11 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import CloseIcon from '@mui/icons-material/Close';
 import '../css/DrawerAppBar.css'
-import { userDetails } from '../Utils/Constants';
 import { replaceSpaceWithHyphen } from "../Utils/BaseUtils";
 
+import { getUserCartDetails, removeOrAddProductInCart } from '../Api/CartApis';
+
+const userId = "Yeshwanth";
 
 const navItems = [
     {
@@ -57,9 +59,12 @@ function DrawerAppBar(props) {
 
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const [openCartDrawer, setOpenCartDrawer] = React.useState(false);
+    const [isCartDrawerOpen, setIsCartDrawerOpen] = React.useState(false);
     const theme = useTheme();
     const isExtraSmall = !useMediaQuery(theme.breakpoints.up('sm'));
+
+    const [cartDetails, setCartDetails] = React.useState([]);
+    const [totalCartValue, setTotalCartValue] = React.useState(0);
 
     const navigate = useNavigate();
 
@@ -72,12 +77,30 @@ function DrawerAppBar(props) {
     }
 
     const closeCartDrawer = () => {
-        setOpenCartDrawer(false);
+        setIsCartDrawerOpen(false);
+    }
+
+    const openCartDrawer = async () => {
+        setIsCartDrawerOpen(true);
+
+        const response = await getUserCartDetails({ userId });
+
+        setCartDetails(response.data);
+        const totalValue = response.data.reduce((acc, item) => acc + parseInt(item.price) * item.quantity, 0);
+        setTotalCartValue(totalValue);
     }
 
     const handleCartItemImageClick = (name) => {
         navigate(replaceSpaceWithHyphen(name));
-        setOpenCartDrawer(false);
+        setIsCartDrawerOpen(false);
+    };
+
+    const handleCartItemQuantityChange = async (productId, quantity) => {
+        const response = await removeOrAddProductInCart({ userId, productId, quantity });
+
+        setCartDetails(response.data);
+        const totalValue = response.data.reduce((acc, item) => acc + parseInt(item.price) * item.quantity, 0);
+        setTotalCartValue(totalValue);
     };
 
     const drawer = (
@@ -102,8 +125,6 @@ function DrawerAppBar(props) {
 
     const container =
         window !== undefined ? () => window().document.body : undefined;
-
-    let cartDetails = userDetails["cartProducts"];
 
     return (
         <div sx={{ display: "flex", backgroundColor: 'black' }}>
@@ -157,7 +178,7 @@ function DrawerAppBar(props) {
                                 padding: '0px'
                             }}
                             startIcon={<ShoppingCartIcon />}
-                            onClick={() => setOpenCartDrawer(true)}
+                            onClick={() => openCartDrawer()}
                         >
                             {cartDetails.length}
                         </Button>
@@ -165,7 +186,7 @@ function DrawerAppBar(props) {
                         {/* cart drawer */}
                         <Drawer
                             anchor={'right'}
-                            open={openCartDrawer}
+                            open={isCartDrawerOpen}
                             onClose={closeCartDrawer}
                             sx={{ fontFamily: 'Cardo serif' }}
                         >
@@ -194,18 +215,18 @@ function DrawerAppBar(props) {
                                                     />
                                                 </div>
                                                 <div>
-                                                    <p onClick={() => handleCartItemImageClick(item.name)} className="cart-item-name">{item.name}</p>
+                                                    <p onClick={() => handleCartItemImageClick(item.title)} className="cart-item-name">{item.title}</p>
                                                     <p className="cart-item-price">₹ {item.price}</p>
                                                     <div className="product-quantity-value">
                                                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                                        <a className="quantity-control-down quantity-control">-</a>
+                                                        <a onClick={() => handleCartItemQuantityChange(item.productId, item.quantity - 1)} className="quantity-control-down quantity-control">-</a>
                                                         <input value={item.quantity} className="product-quantity-display" />
                                                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                                        <a className="quantity-control-up quantity-control">+</a>
+                                                        <a onClick={() => handleCartItemQuantityChange(item.productId, item.quantity + 1)} className="quantity-control-up quantity-control">+</a>
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <CloseIcon className="cart-item-close" />
+                                                    <CloseIcon onClick={() => handleCartItemQuantityChange(item.productId, 0)} className="cart-item-close" />
                                                 </div>
                                             </div>
                                         ))}
@@ -215,7 +236,7 @@ function DrawerAppBar(props) {
                                         <hr className='horizontal-line' style={{ width: '95%' }} />
                                         <div className="total-cart-value">
                                             <p>Total</p>
-                                            <p>₹ 200000</p>
+                                            <p>₹ {totalCartValue}</p>
                                         </div>
 
                                         <div className='cart-checkout-button'>
