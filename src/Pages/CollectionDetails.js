@@ -18,6 +18,10 @@ const CollectionDetails = ({ item }) => {
     const [cancellationPolicyExpanded, setCancellationPolicyExpanded] = useState(false);
     const [totalProductQuantity, setTotalProductQuantity] = useState(1);
 
+    const [addToCartLoading, setAddToCartLoading] = useState(false);
+    const [displayAddedToCart, setDisplayAddedToCart] = useState(false);
+
+
     const handleImageClick = (imageUrl) => {
         setCurrentDisplayImageUrl(imageUrl);
     };
@@ -79,7 +83,13 @@ const CollectionDetails = ({ item }) => {
 
     const handleAddToCartButton = async (productId) => {
         const quantity = totalProductQuantity;
+        setAddToCartLoading(true);
         const response = await removeOrAddProductInCart({ userId, productId, quantity });
+        setAddToCartLoading(false);
+        setDisplayAddedToCart(true);
+        setTimeout(() => {
+            setDisplayAddedToCart(false);
+        }, 3000); // 3000 milliseconds = 3 seconds
         console.log(response.data);
     };
 
@@ -179,7 +189,13 @@ const CollectionDetails = ({ item }) => {
                     </div>
 
                     <div className='product-add-buttons'>
-                        <input onClick={() => handleAddToCartButton(item.productId)} type="submit" name="button" id="product-add-to-cart" value="ADD TO CART" wk-skip="" />
+                        <input
+                            onClick={() => handleAddToCartButton(item.productId)}
+                            type="submit"
+                            name="button"
+                            id="product-add-to-cart"
+                            value={addToCartLoading ? "ADDING TO CART..." : (displayAddedToCart ? "ADDED TO CART" : "ADD TO CART")}
+                        />
                     </div>
 
                     <hr className='horizontal-line' />
