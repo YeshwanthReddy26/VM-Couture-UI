@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/VM-Couture-UI/static/css/main.eb8cc9fe.css",
+    "main.js": "/VM-Couture-UI/static/js/main.475b3560.js",
+    "static/js/453.f4ca83cf.chunk.js": "/VM-Couture-UI/static/js/453.f4ca83cf.chunk.js",
+    "static/media/RedSareeWomen.png": "/VM-Couture-UI/static/media/RedSareeWomen.c306077b5814a94ae08f.png",
+    "static/media/OrangeSareeWomen.png": "/VM-Couture-UI/static/media/OrangeSareeWomen.755f78e8c3d620852edf.png",
+    "static/media/VM-PG120.jpeg": "/VM-Couture-UI/static/media/VM-PG120.b0f979d0cbc43a2bc478.jpeg",
+    "static/media/VM-BR103.jpeg": "/VM-Couture-UI/static/media/VM-BR103.d4401ba6c6c755ace2dd.jpeg",
+    "static/media/VM-BR105.jpeg": "/VM-Couture-UI/static/media/VM-BR105.a4511746e9edeed3dff1.jpeg",
+    "static/media/VM-PG122.jpeg": "/VM-Couture-UI/static/media/VM-PG122.95eb50be2882df21d5a0.jpeg",
+    "static/media/VM-PP100.jpeg": "/VM-Couture-UI/static/media/VM-PP100.77faab4e00f121407aa5.jpeg",
+    "static/media/VM-PG121.jpeg": "/VM-Couture-UI/static/media/VM-PG121.0db058b1dcc4f8620e90.jpeg",
+    "static/media/VM-PK101.jpeg": "/VM-Couture-UI/static/media/VM-PK101.b2d5949c2c17a28dc18c.jpeg",
+    "static/media/VM-PK103.jpeg": "/VM-Couture-UI/static/media/VM-PK103.4e42273caad8ce4b37ef.jpeg",
+    "static/media/VM-PK100.jpeg": "/VM-Couture-UI/static/media/VM-PK100.f2066e6647de8bc3e41e.jpeg",
+    "static/media/VM-PK102.jpeg": "/VM-Couture-UI/static/media/VM-PK102.caa6f7899df81778088e.jpeg",
+    "static/media/VM-BR104.jpeg": "/VM-Couture-UI/static/media/VM-BR104.0a7b3c15095bad0a3907.jpeg",
+    "static/media/VM-BR100.jpeg": "/VM-Couture-UI/static/media/VM-BR100.fcea7b6f0041561ad6f6.jpeg",
+    "static/media/VM-BR101.jpeg": "/VM-Couture-UI/static/media/VM-BR101.f4a4a6651b91d2e23b12.jpeg",
+    "static/media/VM-PP101.jpeg": "/VM-Couture-UI/static/media/VM-PP101.d53681de9abd30a1abfd.jpeg",
+    "static/media/VM-SG100.jpeg": "/VM-Couture-UI/static/media/VM-SG100.2a164f3e365d5c64a81e.jpeg",
+    "static/media/VM-BR102.jpeg": "/VM-Couture-UI/static/media/VM-BR102.56c02e8e5560a8a59d8c.jpeg",
+    "static/media/kalyaniSareepic.jpg": "/VM-Couture-UI/static/media/kalyaniSareepic.2a7bcfe862f001b4c272.jpg",
+    "index.html": "/VM-Couture-UI/index.html",
+    "main.eb8cc9fe.css.map": "/VM-Couture-UI/static/css/main.eb8cc9fe.css.map",
+    "main.475b3560.js.map": "/VM-Couture-UI/static/js/main.475b3560.js.map",
+    "453.f4ca83cf.chunk.js.map": "/VM-Couture-UI/static/js/453.f4ca83cf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb8cc9fe.css",
+    "static/js/main.475b3560.js"
+  ]
+}
