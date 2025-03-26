@@ -106,7 +106,7 @@ function DrawerAppBar(props) {
     const drawer = (
         <div onClick={handleDrawerToggle} style={{ textAlign: 'center', backgroundColor: 'black', color: 'white' }}>
             <Typography variant="h6" sx={{ my: '12px', color: "white" }}>
-                CompanyName
+                VM Couture
             </Typography>
             <List>
                 {navItems.map((item) => (
@@ -149,7 +149,7 @@ function DrawerAppBar(props) {
                                     component="div"
                                     sx={{ flex: 1, display: 'flex', alignItems: 'center', paddingLeft: '30px' }}
                                 >
-                                    CompanyName
+                                    VM Couture
                                 </Typography>
                                 <Box sx={{ display: 'flex' }}>
                                     {navItems.map((item) => (
